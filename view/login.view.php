@@ -13,9 +13,42 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<?php
+    include ("../header.php");
+?>
 
 <body>
-    <main>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Log hier in met ... !</p>
+              <div class="form-outline form-white mb-4">
+                <form method="post" id="login-form" action="">
+                <input ype="email" name="email" placeholder="012345@glr.nl" class="login-input form-control form-control-lg" required />
+                <label class="form-label" for="email">Email</label>
+              </div>
+              <div class="form-outline form-white mb-4">
+                <input type="password" name="wachtwoord" placeholder="Wachtwoord" class="login-input form-control form-control-lg" />
+                <label class="form-label" for="wachtwoord">Wachtwoord</label>
+                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="inc/resetPassword.php" class="forgot-password">Wachtwoord vergeten?</a></p>
+              </div>
+              <button class="submit-button login-btn btn btn-outline-light btn-lg px-5" type="button" name="login-submit" id="login-btn">Login</button>
+            </div> 
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 
+     <main>
         <section class="main">
             <div class="login-wrapper">
                 <h1>Login</h1>
@@ -35,6 +68,7 @@
 
                 <a href="inc/resetPassword.php" class="forgot-password">Wachtwoord vergeten?</a>
             </div>
+-->
 
             <div class="signup-wrapper">
                 <h1>Maak een Account</h1>
@@ -60,6 +94,17 @@
             <p class="toggle-signup">verander state</p>
         </section>
     </main>
+
+  
+
+        
+
+  
+
+
+
+
+
 
 </body>
 
