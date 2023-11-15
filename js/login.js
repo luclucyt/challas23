@@ -46,15 +46,26 @@ signupBtn.addEventListener("click", function(event) {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'inc/signUpSubmit.php', true);
     xhr.onload = function(){
-        Swal.fire({
-            title: 'Succes!',
-            text: this.response,
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        });
 
-        if(this.response == "Controleer je email om je account te activeren") {
-            switchForm();
+        let response = this.response;
+        response = JSON.parse(response);
+        console.log(response);
+
+        if(response[0] == 0){
+            Swal.fire({
+                title: 'Error!',
+                text: response[1],
+                icon: 'error',
+                confirmButtonText: 'probeer opnieuw'
+            });
+        }else{
+            Swal.fire({
+                title: 'Succes!',
+                text: response[1],
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            });
+            switchform();
         }
     }
 
