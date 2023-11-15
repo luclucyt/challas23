@@ -4,6 +4,7 @@ const video = document.getElementById("preview");
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 
+video.style.backgroundColor = "black";
 async function getCameraSelection() {
    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
