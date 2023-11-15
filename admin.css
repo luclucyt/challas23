@@ -1,5 +1,5 @@
 body {
-    background-color: #181414;
+    background-color: #111111;
 }
 
 @media only screen and (max-width: 412px) and (max-height: 914px) {
@@ -23,7 +23,16 @@ body {
 #naam, #email, #aanmeldingen {
     text-align: center;
     margin-bottom: 5px;
-    margin-right: 125px;
-    font-family: 'Century Gothic Pro Bold';   
+    font-family: 'century-gothic-bold', sans-serif; 
     color: #a7cd48;
+}
+
+img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+#info {
+    margin-top: 5vh;
 }
