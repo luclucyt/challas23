@@ -1,9 +1,9 @@
 <?php 
 include '_database.php';
 
-echo signUp();
+echo json_encode(signUp());
 
-function signUp() : string {
+function signUp() : array {
     global $conn;
 
     if(!isset($_POST)) {
@@ -23,50 +23,50 @@ function signUp() : string {
     $password = cleanData($password);
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return "Email is niet geldig";
+        return [0, "Email is niet geldig"];
     }
 
     if(!preg_match('/@glr.nl/', $email)) {
-        return "Gebruik een GLR email adres";
+        return [0, "Gebruik een GLR email adres"];
     }
 
     if(strlen($password) < 8) {
-        return "Wachtwoord moet minimaal 8 tekens lang zijn";
+        return [0, "Wachtwoord moet minimaal 8 tekens lang zijn"];
     }
 
     if(!preg_match('/[A-Z]/', $password)) {
-        return "Wachtwoord moet minimaal 1 hoofdletter bevatten";
+        return [0, "Wachtwoord moet minimaal 1 hoofdletter bevatten"];
     }
 
     if(!preg_match('/[0-9]/', $password)) {
-        return "Wachtwoord moet minimaal 1 cijfer bevatten";
+        return [0, "Wachtwoord moet minimaal 1 cijfer bevatten"];
     }
 
     if(strlen($naam) < 3) {
-        return "Naam moet minimaal 3 tekens lang zijn";
+        return [0, "Naam moet minimaal 3 tekens lang zijn"];
     }
 
     if(strlen($naam) > 50) {
-        return "Naam mag maximaal 50 tekens lang zijn";
+        return [0, "Naam mag maximaal 50 tekens lang zijn"];
     }
 
     if(!preg_match('/^[a-zA-Z\s]+$/', $naam)) {
-        return "Naam mag alleen letters en spaties bevatten";
+        return [0, "Naam mag alleen letters en spaties bevatten"];
     }
 
     if(strlen($email) > 50) {
-        return "Email mag maximaal 50 tekens lang zijn";
+        return [0, "Email mag maximaal 50 tekens lang zijn"];
     }
 
     if(strlen($password) > 50) {
-        return "Wachtwoord mag maximaal 50 tekens lang zijn";
+        return [0, "Wachtwoord mag maximaal 50 tekens lang zijn"];
     }
 
     $sql = "SELECT * FROM users WHERE email = '$email' AND isAllowed = 1";
     $result = mysqli_query($conn, $sql);
 
     if(!$result) {
-        return mysqli_error($conn);
+        return [mysqli_error($conn)];
     }
 
     if(mysqli_num_rows($result) > 0) {
@@ -74,7 +74,7 @@ function signUp() : string {
         $userID = $row['userID'];
 
         if($row['isAllowed'] == 1) {
-            return "Er bestaat al een account met dit email adres";
+            return [0, "Er bestaat al een account met dit email adres"];
         }else{
             $sql = "DELETE FROM users WHERE userID = $userID";
             mysqli_query($conn, $sql);
@@ -89,7 +89,7 @@ function signUp() : string {
     $result = mysqli_query($conn, $sql);
 
     if(!$result) {
-        return mysqli_error($conn);
+        return [mysqli_error($conn)];
     }
 
     $linkCode = bin2hex(random_bytes(16));
@@ -98,7 +98,7 @@ function signUp() : string {
     $result = mysqli_query($conn, $sql);
 
     if(!$result) {
-        return mysqli_error($conn);
+        return [mysqli_error($conn)];
     }
 
     include 'mail.php';
@@ -107,7 +107,7 @@ function signUp() : string {
 
         Bedankt voor het aanmaken van een account op Challas '23.<br>
         Klik op de onderstaande link om je account te activeren.<br><br>
-        <a href='http://{$_SERVER['SERVER_NAME']}/confirm.php?link={$linkCode}'>Account activeren</a><br>
+        <a href='http://{$_SERVER['SERVER_NAME']}/confirm.php?link={$linkCode}' target='_blank'>Account activeren</a><br>
         Geen account aangemaakt? Negeer deze email.<br><br>
         "
     );
@@ -115,6 +115,6 @@ function signUp() : string {
     $mail->sendMail();
     
 
-    return "Naam: $naam, Email: $email, Wachtwoord: $password";
+    return [1, "Account aangemaakt, controleer je email om je account te activeren"];
 }
 
