@@ -6,6 +6,9 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php';
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 
 Class email{
     private $to;
@@ -18,28 +21,27 @@ Class email{
         $this->to = $to;
         $this->subject = $subject;
         $this->message = $message;
-        $this->mail = new PHPMailer(true);
+        $this->mail = new PHPMailer();
     }
     
     public function setMailUp(){
 
         try {
             //Server settings
-            $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
             $this->mail->isSMTP();                                           
             $this->mail->Host       = 'smtp.gmail.com';                     
-            $this->mail->SMTPAuth   = true;                                  
-            $this->mail->Username   = 'softwaredeveloperglr@gmail.com';                     
-            $this->mail->Password   = file_get_contents("../data/gmail.txt");                              
-            $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;           
-            $this->mail->Port       = 465;       
+            $this->mail->SMTPAuth   = true;       
             
+            $this->mail->SMTPSecure = 'tls';
+            $this->mail->Port       = 587;       
+
+            $this->mail->Username   = 'vanbriemenlucas@gmail.com';                     
+            $this->mail->Password   = file_get_contents("../data/gmail.txt");                              
+            $this->mail->setFrom('vanbriemenlucas@gmail.com', 'Lucas van Briemen');
             $this->mail->isHTML(true);
             
-            $this->mail->do_debug = 0;
             $this->mail->SMTPDebug = 0;
         
-            $this->mail->setFrom('softwaredeveloperglr@gmail.com', 'Lucas van Briemen');
 
         } catch (Exception $e) {
             return "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
@@ -69,8 +71,3 @@ Class email{
         $this->mail->send();
     }
 }
-
-
-$test = new email("088875@glr.nl", "test", "test");
-$test->prepareMail();
-$test->sendMail();
