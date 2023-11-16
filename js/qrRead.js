@@ -39,7 +39,7 @@ function captureFrame() {
     const code = jsQR(imageData.data, imageData.width, imageData.height);
 
     if (code) {
-        alert("QR Code found:", code.data);
+        alert("QR Code found: " + code.data);
     }
 
     // Repeat the process

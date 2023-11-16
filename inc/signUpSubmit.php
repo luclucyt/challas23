@@ -7,11 +7,11 @@ function signUp() : array {
     global $conn;
 
     if(!isset($_POST)) {
-        return "Geen data ontvangen, probeer het opnieuw";
+        return [0, "Geen data ontvangen, probeer het opnieuw"];
     }
 
     if(empty($_POST['naam']) || empty($_POST['email']) || empty($_POST['password'])) {
-        return "Niet alle velden zijn ingevuld";
+        return [0, "Niet alle velden zijn ingevuld"];
     }
 
     $naam = $_POST['naam'];
@@ -62,22 +62,24 @@ function signUp() : array {
         return [0, "Wachtwoord mag maximaal 50 tekens lang zijn"];
     }
 
-    $sql = "SELECT * FROM users WHERE email = '$email' AND isAllowed = 1";
+    $sql = "SELECT * FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
 
-    if(!$result) {
-        return [mysqli_error($conn)];
-    }
-
     if(mysqli_num_rows($result) > 0) {
+
         $row = mysqli_fetch_assoc($result);
         $userID = $row['userID'];
 
         if($row['isAllowed'] == 1) {
             return [0, "Er bestaat al een account met dit email adres"];
         }else{
-            $sql = "DELETE FROM users WHERE userID = $userID";
-            mysqli_query($conn, $sql);
+            $sql = "DELETE FROM users WHERE userID = '$userID'";
+            $result = mysqli_query($conn, $sql);
+
+            if(!$result) {
+                return [0, mysqli_error($conn)];
+            }
+
         }
 
     }
@@ -89,7 +91,7 @@ function signUp() : array {
     $result = mysqli_query($conn, $sql);
 
     if(!$result) {
-        return [mysqli_error($conn)];
+        return [0, mysqli_error($conn)];
     }
 
     $linkCode = bin2hex(random_bytes(16));
@@ -98,7 +100,7 @@ function signUp() : array {
     $result = mysqli_query($conn, $sql);
 
     if(!$result) {
-        return [mysqli_error($conn)];
+        return [0, mysqli_error($conn)];
     }
 
     include 'mail.php';
@@ -113,6 +115,11 @@ function signUp() : array {
     );
     $mail->prepareMail();
     $mail->sendMail();
+
+
+    include 'makeQR.php';
+    $qr = new MakeQR($userCode, $naam, $email);
+    $qr->create();
     
 
     return [1, "Account aangemaakt, controleer je email om je account te activeren"];
