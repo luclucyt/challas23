@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Scanner</title>
     <link rel="stylesheet" href="admin.css">
-    <script src="JS/qrRead.js" type="module" defer></script>
+    <script src="js/qrRead.js" type="module" defer></script>
 </head>
 
 <body>
