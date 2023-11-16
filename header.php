@@ -9,6 +9,11 @@
     <!--font-family: 'century-gothic-bold', sans-serif -->
     <link href="https://www.dafontfree.net/embed/Y2VudHVyeS1nb3RoaWMtYm9sZCZkYXRhLzQ3L2MvNTA3NjIvZ290aGljYi50dGY" rel="stylesheet" type="text/css"/>
     <title>header.php</title>
+
+    <style>
+      
+    </style>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
