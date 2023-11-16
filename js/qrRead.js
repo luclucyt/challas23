@@ -8,27 +8,26 @@ video.style.backgroundColor = "black";
 canvas.style.backgroundColor = "black";
 
 async function getCameraSelection() {
-    const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "environment" } // Use the back camera
-    });
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment" } // Use the back camera
+        });
 
-    video.srcObject = stream;
-}
-
-// Request access to the camera
-navigator.mediaDevices
-    .getUserMedia({ video: true })
-    .then((stream) => {
         video.srcObject = stream;
 
         video.onloadedmetadata = () => {
             video.play();
             captureFrame();
         };
-    })
-    .catch((error) => {
-        console.error("Error accessing camera:", error);
-    });
+
+        console.log("Successfully accessed back camera.");
+    } catch (err) {
+        console.error("Error accessing camera:", err);
+    }
+}
+
+// Call the function to get the back camera
+getCameraSelection();
 
 function captureFrame() {
     const targetWidth = 400; // Adjust the target width as needed
@@ -40,7 +39,7 @@ function captureFrame() {
     const code = jsQR(imageData.data, imageData.width, imageData.height);
 
     if (code) {
-        console.log("QR Code found:", code.data);
+        alert("QR Code found:", code.data);
     }
 
     // Repeat the process
