@@ -8,9 +8,11 @@ video.style.backgroundColor = "black";
 canvas.style.backgroundColor = "black";
 
 async function getCameraSelection() {
-   const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: "environment" } // Use the back camera
+    });
 
-   video.srcObject = stream;
+    video.srcObject = stream;
 }
 
 // Request access to the camera
