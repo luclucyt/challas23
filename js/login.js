@@ -78,19 +78,34 @@ loginBtn.addEventListener("click", function(event) {
     let form = document.getElementById("login-form"); // Replace with your form's actual ID
     let formData = new FormData(form);
 
+    let test = ["t", "a"]
+
+    test.forEach(letter => {
+        
+    });
+
 
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'inc/loginSubmit.php', true);
     xhr.onload = function(){
-        Swal.fire({
-            title: 'Succes!',
-            text: this.response,
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        });
+        let response = this.response
+        response = JSON.parse(response)
 
-        if(this.response == "U bent succesvol ingelogd!") {
-            window.location.replace("home.php");
+        if(response[0] == 0){
+            Swal.fire({
+                title: 'Error!',
+                text: response[1],
+                icon: 'error',
+                confirmButtonText: 'probeer opnieuw'
+            })
+        }else{
+            Swal.fire({
+                title: 'Succes!',
+                text: response[1],
+                icon: 'success',
+                confirmButtonText: 'Ga naar de home pagina!'
+            })
+            window.location.href = "home.php"
         }
     }
 

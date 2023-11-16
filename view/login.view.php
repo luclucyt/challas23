@@ -12,35 +12,59 @@
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            height: 100vh;
+            background: linear-gradient(150deg, rgba(143, 81, 144, 1) 2%, rgba(167, 205, 72, 1) 29%, rgba(193, 65, 104, 1) 55%, rgba(188, 86, 55, 1) 61%, rgba(223, 199, 54, 1) 86%, rgba(81, 153, 191, 0.86) 100%);
+            }
+
+        .kop {
+            color: #A7CD48;
+            font-family: "Changeling Neo W01 Bold";
+        }
+
+        .tekst {
+            color: #C14168!important;
+            font-family: 'century-gothic-bold', sans-serif ;
+        }
+
+        .submit-button {
+            border-color:  #C14168!important;
+        }
+
+
+    </style>
+
+
 </head>
 <?php
 include("header.php");
 ?>
 
-<section class="gradient-custom d-flex align-items-center">
+<section class="gradient-custom d-flex mt-3 align-items-center">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-dark text-white h-100" style="border-radius: 1rem;">
+                    <div class="card bg-dark h-100" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center d-flex flex-column justify-content-between h-100">
                             <div class="mb-md-5 mt-md-4 pb-2 login-wrapper">
-                                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                                <p class="text-white-50 mb-5">Log hier in met ... !</p>
+                                <h2 class="fw-bold mb-2 text-uppercase kop">Login</h2>
+                                <p class="mb-5"></p>
                                 <div class="form-outline form-white mb-4">
                                     <form method="post" id="login-form" action="">
                                         <input type="email" name="email" placeholder="012345@glr.nl"
-                                            class="login-input form-control form-control-lg" required />
-                                        <label class="form-label" for="email">Email</label>
+                                            class="login-input form-control  text-center form-control-lg" required />
+                                        
                                 </div>
                                 <div class="form-outline form-white mb-4">
                                     <input type="password" name="wachtwoord" placeholder="Wachtwoord"
-                                        class="login-input form-control form-control-lg" />
-                                    <label class="form-label" for="wachtwoord">Wachtwoord</label>
-                                    <p class="small mb-5 pb-lg-2"><a class="text-white-50"
+                                        class="login-input form-control text-center form-control-lg" />
+                                   
+                                    <p class="small tekst mb-5 pb-lg-2"><a class="tekst"
                                             href="inc/resetPassword.php" class="forgot-password">Wachtwoord
                                             vergeten?</a></p>
                                 </div>
-                                <button class="submit-button login-btn btn btn-outline-light btn-lg px-5"
+                                <button class="submit-button tekst login-btn btn btn-lg px-5"
                                     type="button" name="login-submit" id="login-btn">Login</button>
                             </form>
                         </div>
@@ -51,27 +75,27 @@ include("header.php");
                                 enctype="multipart/form-data">
                                 <div class="form-outline form-white mb-4">
                                     <input type="text" name="naam" placeholder="Voor- en achternaam"
-                                        class="input-sign-up form-control form-control-lg" />
-                                    <label class="form-label" for="email">Email</label>
+                                        class="input-sign-up form-control text-center form-control-lg" />
+                                    
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input type="email" name="email" placeholder="012345@glr.nl"
-                                        class="input-sign-up form-control form-control-lg" />
-                                    <label class="form-label" for="email">Email</label>
+                                        class="input-sign-up form-control text-center form-control-lg" />
+                                    
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <input type="password" name="password" placeholder="Wachtwoord" id="password"
-                                        class="input-sign-up form-control form-control-lg" />
-                                    <label class="form-label" for="email">Wachtwoord</label>
+                                        class="input-sign-up form-control text-center form-control-lg" />
+                                    
                                 </div>
                                 <button class="submit-button sign-up-btn btn btn-outline-light btn-lg px-5"
                                     type="button" name="signup-submit" id="signup-btn">Registreer</button>
                             </form>
                         </div>
                     </div>
-                    <p class="text-white mb-5 text-center toggle-signup">verander state</p>
+                    <p class="tekst mb-5 text-center toggle-signup">verander state</p>
                 </div>
                 
             </div>

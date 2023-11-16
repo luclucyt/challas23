@@ -7,6 +7,8 @@ $database = "challas";
 
 $conn = mysqli_connect($host, $user, $password, $database);
 
+session_start();
+
 function cleanData($data) {
     global $conn;
 
