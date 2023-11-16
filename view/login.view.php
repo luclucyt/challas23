@@ -17,38 +17,69 @@
 include("header.php");
 ?>
 
-<body>
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
+<section class="gradient-custom d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
-                            <div class="mb-md-5 mt-md-4 pb-5 login-wrapper">
+                    <div class="card bg-dark text-white h-100" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center d-flex flex-column justify-content-between h-100">
+                            <div class="mb-md-5 mt-md-4 pb-2 login-wrapper">
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                 <p class="text-white-50 mb-5">Log hier in met ... !</p>
                                 <div class="form-outline form-white mb-4">
                                     <form method="post" id="login-form" action="">
-                                        <input ype="email" name="email" placeholder="012345@glr.nl" class="login-input form-control form-control-lg" required />
+                                        <input type="email" name="email" placeholder="012345@glr.nl"
+                                            class="login-input form-control form-control-lg" required />
                                         <label class="form-label" for="email">Email</label>
                                 </div>
                                 <div class="form-outline form-white mb-4">
-                                    <input type="password" name="wachtwoord" placeholder="Wachtwoord" class="login-input form-control form-control-lg" />
+                                    <input type="password" name="wachtwoord" placeholder="Wachtwoord"
+                                        class="login-input form-control form-control-lg" />
                                     <label class="form-label" for="wachtwoord">Wachtwoord</label>
-                                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="inc/resetPassword.php" class="forgot-password">Wachtwoord vergeten?</a></p>
+                                    <p class="small mb-5 pb-lg-2"><a class="text-white-50"
+                                            href="inc/resetPassword.php" class="forgot-password">Wachtwoord
+                                            vergeten?</a></p>
                                 </div>
-                                <button class="submit-button login-btn btn btn-outline-light btn-lg px-5" type="button" name="login-submit" id="login-btn">Login</button>
-                                </form>
-                            </div>
+                                <button class="submit-button login-btn btn btn-outline-light btn-lg px-5"
+                                    type="button" name="login-submit" id="login-btn">Login</button>
+                            </form>
+                        </div>
+
+                        <div class="signup-wrapper">
+                            <h1>Maak een Account</h1>
+                            <form method="POST" action="" autocomplete="off" id="signup-form"
+                                enctype="multipart/form-data">
+                                <div class="form-outline form-white mb-4">
+                                    <input type="text" name="naam" placeholder="Voor- en achternaam"
+                                        class="input-sign-up form-control form-control-lg" />
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" name="email" placeholder="012345@glr.nl"
+                                        class="input-sign-up form-control form-control-lg" />
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="password" name="password" placeholder="Wachtwoord" id="password"
+                                        class="input-sign-up form-control form-control-lg" />
+                                    <label class="form-label" for="email">Wachtwoord</label>
+                                </div>
+                                <button class="submit-button sign-up-btn btn btn-outline-light btn-lg px-5"
+                                    type="button" name="signup-submit" id="signup-btn">Registreer</button>
+                            </form>
                         </div>
                     </div>
+                    <p class="text-white mb-5 text-center toggle-signup">verander state</p>
                 </div>
+                
             </div>
+        </div>
         </div>
     </section>
 
-
-    <div class="signup-wrapper">
+<!-- <div class="signup-wrapper">
         <h1>Maak een Account</h1>
         <form method="POST" action="" autocomplete="off" id="signup-form" enctype="multipart/form-data">
 
@@ -72,6 +103,7 @@ include("header.php");
     <p class="toggle-signup">verander state</p>
     </section>
     </main>
+-->
 
 
 
@@ -96,7 +128,7 @@ include("header.php");
 
 
 
-    <!-- 
+<!-- 
      <main>
         <section class="main">
             <div class="login-wrapper">
