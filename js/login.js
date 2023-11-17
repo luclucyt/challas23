@@ -78,13 +78,6 @@ loginBtn.addEventListener("click", function(event) {
     let form = document.getElementById("login-form"); // Replace with your form's actual ID
     let formData = new FormData(form);
 
-    let test = ["t", "a"]
-
-    test.forEach(letter => {
-        
-    });
-
-
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'inc/loginSubmit.php', true);
     xhr.onload = function(){
