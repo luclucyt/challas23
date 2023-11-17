@@ -40,7 +40,7 @@ class MakeQR
         if ($this->label != null) {
             $label = Label::create($this->label)
                 ->setTextColor(new Color(167, 205, 72))
-                ->setAlignment(new LabelAlignmentLeft)
+                ->setAlignment(new LabelAlignmentCenter)
                 ->setFont(new Font(
                     'CenturyGothicPro-Bold.otf',
                 ), 20);

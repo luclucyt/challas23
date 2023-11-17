@@ -4,6 +4,8 @@ const video = document.getElementById("preview");
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 
+let hasSeen = false;
+
 video.style.backgroundColor = "black";
 canvas.style.backgroundColor = "black";
 
@@ -38,16 +40,21 @@ function captureFrame() {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const code = jsQR(imageData.data, imageData.width, imageData.height);
 
-    if(code){
+    if(code && !hasSeen){
+
+        hasSeen = true;
 
         let formData = new FormData;
         formData.append('code', code.data)
 
-        let xhr = XMLHttpRequest();
-        xhr.open('POST', 'inc/qrScan', true);
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'inc/qrScan.php', true);
 
         xhr.onload = function(){
-            let response = this.response
+            let response = this.response;
+            response = JSON.parse(response);
+
+            console.log(response)
 
             if(response[0] == 0){
                 Swal.fire({
@@ -55,22 +62,22 @@ function captureFrame() {
                     text: response[1],
                     icon: 'error',
                     confirmButtonText: 'probeer opnieuw'
-                })
+                }).then(() => {
+                    hasSeen = false;
+                })  
             }else{
                 Swal.fire({
                     title: 'Succes!',
                     text: response[1],
                     icon: 'success',
                     confirmButtonText: 'Ga naar de home pagina!'
+                }).then(() => {
+                    hasSeen = false;
                 })
             }
         }
 
         xhr.send(formData)
-    }
-
-    if (code) {
-        alert("QR Code found: " + code.data);
     }
 
     // Repeat the process
