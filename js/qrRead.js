@@ -70,7 +70,7 @@ function captureFrame() {
     }
 
     if (code) {
-        alert("QR Code found:", code.data);
+        alert("QR Code found: " + code.data);
     }
 
     // Repeat the process
