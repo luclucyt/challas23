@@ -38,6 +38,37 @@ function captureFrame() {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const code = jsQR(imageData.data, imageData.width, imageData.height);
 
+    if(code){
+
+        let formData = new FormData;
+        formData.append('code', code.data)
+
+        let xhr = XMLHttpRequest();
+        xhr.open('POST', 'inc/qrScan', true);
+
+        xhr.onload = function(){
+            let response = this.response
+
+            if(response[0] == 0){
+                Swal.fire({
+                    title: 'Error!',
+                    text: response[1],
+                    icon: 'error',
+                    confirmButtonText: 'probeer opnieuw'
+                })
+            }else{
+                Swal.fire({
+                    title: 'Succes!',
+                    text: response[1],
+                    icon: 'success',
+                    confirmButtonText: 'Ga naar de home pagina!'
+                })
+            }
+        }
+
+        xhr.send(formData)
+    }
+
     if (code) {
         alert("QR Code found: " + code.data);
     }
