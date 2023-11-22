@@ -22,7 +22,18 @@ function scanQR(){
     }
 
     $row = mysqli_fetch_assoc($result);
+
     
 
-    return [1, $_POST['code']];
+    if($row['status'] == '1'){
+        $sql = "UPDATE users SET status = '0' WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
+
+        return [1, "Gebruiker is nu Afgemeld"];
+    }
+
+    $sql = "UPDATE users SET status = '1' WHERE userID = '$code'";
+    $result = mysqli_query($conn, $sql);
+
+    return [1, "Gebruiker is nu Aangemeld"];
 }
