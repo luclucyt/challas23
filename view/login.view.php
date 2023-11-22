@@ -28,6 +28,18 @@
         top: 0; left: 0; bottom: 0; right: 0;
         }
         
+        /*.card {
+            z-index: -1;
+            border: 0.2rem solid purple;
+             
+             box-shadow: 0 0 .2rem purple,
+            0 0 .2rem purple,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe; 
+
+        }*/
 
         .kop {
             color: #A7CD48;
