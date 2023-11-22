@@ -23,14 +23,6 @@
             <div class="corner bottom-left"></div>
             <div class="corner bottom-right"></div>
         </div>
-        <div class="image_container">
-            <div class="img_container_content">
-                <img class="framed" src="https://picsum.photos/seed/picsum/400/400" alt="">
-                <img class="framed" src="https://picsum.photos/seed/picsum/400/400" alt="">
-                <img class="framed" src="https://picsum.photos/seed/picsum/400/400" alt="">
-                <img class="framed" src="https://picsum.photos/seed/picsum/400/400" alt="">
-            </div>
-        </div>
         <!-- <img src="IMG/qr/<?= $_SESSION['email'] ?>.png" alt=""> -->
     </div>
 </body>
