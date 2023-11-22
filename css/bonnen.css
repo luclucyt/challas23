@@ -1,0 +1,22 @@
+body {
+    background-image: url("../IMG/background-_1__1.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.qr_code {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.qr_code img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow:  16px 16px 32px #777777, -16px -16px 32px #ffffff;
+}

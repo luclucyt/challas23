@@ -1,11 +1,11 @@
 <?php
 
-$host = "localhost";
+$server = "81.206.73.35";
 $user = "LucasDatabase";
 $password = "LucasDatabase";
 $database = "challas";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conn = mysqli_connect($server, $user, $password, $database);
 
 session_start();
 
