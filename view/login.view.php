@@ -13,10 +13,33 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        
         body {
             height: 100vh;
-            background: linear-gradient(150deg, rgba(143, 81, 144, 1) 2%, rgba(167, 205, 72, 1) 29%, rgba(193, 65, 104, 1) 55%, rgba(188, 86, 55, 1) 61%, rgba(223, 199, 54, 1) 86%, rgba(81, 153, 191, 0.86) 100%);
-            }
+            /*background: linear-gradient(150deg, rgba(143, 81, 144, 1) 2%, rgba(167, 205, 72, 1) 29%, rgba(193, 65, 104, 1) 55%, rgba(188, 86, 55, 1) 61%, rgba(223, 199, 54, 1) 86%, rgba(81, 153, 191, 0.86) 100%);*/
+            background-image: url("../IMG/background-_1__1.webp");    
+            background-size: cover;
+            background-position: 90% 0;
+        }
+
+        .center-element {
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        }
+        
+        /*.card {
+            z-index: -1;
+            border: 0.2rem solid purple;
+             
+             box-shadow: 0 0 .2rem purple,
+            0 0 .2rem purple,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe; 
+
+        }*/
 
         .kop {
             color: #A7CD48;
@@ -41,10 +64,10 @@
 include("header.php");
 ?>
 
-<section class="gradient-custom d-flex mt-3 align-items-center">
+<section class="center-element gradient-custom d-flex mt-5 align-items-center">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="col-10 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-dark h-100" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center d-flex flex-column justify-content-between h-100">
                             <div class="mb-md-5 mt-md-4 pb-2 login-wrapper">

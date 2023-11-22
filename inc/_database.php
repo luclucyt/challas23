@@ -1,12 +1,15 @@
 <?php
 
-$host = "localhost";
+$server = "81.206.73.35";
 $user = "LucasDatabase";
 $password = "LucasDatabase";
 $database = "challas";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conn = mysqli_connect($server, $user, $password, $database);
 
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 session_start();
 
 function cleanData($data) {

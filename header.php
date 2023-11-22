@@ -8,15 +8,27 @@
     <link href="https://db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=Changeling+Neo+W01+Bold" rel="stylesheet">
     <!--font-family: 'century-gothic-bold', sans-serif -->
     <link href="https://www.dafontfree.net/embed/Y2VudHVyeS1nb3RoaWMtYm9sZCZkYXRhLzQ3L2MvNTA3NjIvZ290aGljYi50dGY" rel="stylesheet" type="text/css"/>
-    <title>header.php</title>
+    
 
     <style>
-      
+   
+.navbar-toggler{
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+  .navbar-nav .nav-link {
+    color: #fff !important;
+  }
     </style>
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="../IMG/Challas2023_logo_FINAL.png" alt="Logo" width="50" height="44"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
