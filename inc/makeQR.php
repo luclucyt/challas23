@@ -46,8 +46,6 @@ class MakeQR
                 ), 20);
         }
 
-
-
         $writer = new PngWriter;
         $result = $writer->write($qr_code, label: $label);
 
