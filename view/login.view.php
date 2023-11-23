@@ -145,7 +145,7 @@ include("header.php");
                             </form>
                         </div>
                     </div>
-                    <p class="tekst mb-5 text-center toggle-signup">verander state</p>
+                    <p class="tekst mb-5 text-center text-decoration-underline toggle-signup">verander state</p>
                 </div>
             </div>
         </div>
