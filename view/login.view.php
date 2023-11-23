@@ -32,7 +32,7 @@
         }
         
         .card {
-            z-index: -1;
+            z-index: 1;
             /*border: 0.2rem solid purple;
             box-shadow: 0 0 .2rem purple,
             0 0 .2rem purple,
@@ -118,7 +118,7 @@ include("header.php");
                         </div>
 
                         <div class="signup-wrapper">
-                            <h1>Maak een Account</h1>
+                            <h2 class="kop">Maak een Account</h2>
                             <form method="POST" action="" autocomplete="off" id="signup-form"
                                 enctype="multipart/form-data">
 
@@ -140,7 +140,7 @@ include("header.php");
                                         class="input-sign-up form-control text-center form-control-lg" />
                                     
                                 </div>
-                                <button class="submit-button sign-up-btn btn btn-outline-light btn-lg px-5"
+                                <button class="submit-button sign-up-btn btn btn-outline-light tekst btn-lg px-5"
                                     type="button" name="signup-submit" id="signup-btn">Registreer</button>
                             </form>
                         </div>

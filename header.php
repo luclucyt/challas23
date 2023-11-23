@@ -12,6 +12,9 @@
 
 
     <style>
+        .navbar {
+            z-index: 999;
+        }
         .navbar-toggler {
             border-color: white;
         }
