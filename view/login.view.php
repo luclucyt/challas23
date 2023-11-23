@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 
     <!-- Javascript -->
     <script defer src="js/login.js"></script>
@@ -19,6 +19,10 @@
             background-image: url("../IMG/background-_1__1.webp");    
             background-size: cover;
             background-position: 90% 0;
+        }
+
+        .swal2-popup{
+            background-color: #A7CD48;
         }
 
         .center-element {
