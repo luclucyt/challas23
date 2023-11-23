@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function gameLoop() {
-        const gravity = 2;
+        const gravity = 1;
         let birdBottom = parseFloat(window.getComputedStyle(bird).getPropertyValue('bottom'));
 
         if (!isGameOver) {
