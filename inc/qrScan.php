@@ -30,4 +30,10 @@ function scanQR(){
         $sql = "UPDATE users SET teller = teller + 1 WHERE userID = '$code'";
         $result = mysqli_query($conn, $sql);
     }
+
+    if(!$result){
+        return [0, "Gebruiker niet geupdate"];
+    }
+
+    return [1, "Gebruiker geupdate"];
 }

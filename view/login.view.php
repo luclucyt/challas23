@@ -25,8 +25,6 @@
             background-color: #212529;
         }
 
-
-
         .center-element {
         margin: auto;
         position: absolute;

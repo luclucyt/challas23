@@ -1,20 +1,14 @@
 <?php
-echo "test1";
-
 $server = "localhost";
-$user = "challas";
-$password = "gRET-McXS-4k9S-Y_yv-4h&j-E";
+$user = "LucasDatabase";//"challas";
+$password = "LucasDatabase";//"gRET-McXS-4k9S-Y_yv-4h&j-E";
 $database = "challas";
 
 $conn = mysqli_connect($server, $user, $password, $database);
-echo "test1";
-
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "test1";
-
 session_start();
 
 function cleanData($data) {
