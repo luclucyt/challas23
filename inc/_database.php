@@ -1,15 +1,20 @@
 <?php
+echo "test1";
 
-$server = "81.206.73.35";
-$user = "LucasDatabase";
-$password = "LucasDatabase";
+$server = "localhost";
+$user = "challas";
+$password = "gRET-McXS-4k9S-Y_yv-4h&j-E";
 $database = "challas";
 
 $conn = mysqli_connect($server, $user, $password, $database);
+echo "test1";
+
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+echo "test1";
+
 session_start();
 
 function cleanData($data) {

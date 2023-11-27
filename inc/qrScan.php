@@ -23,7 +23,11 @@ function scanQR(){
 
     $row = mysqli_fetch_assoc($result);
 
-    if($row['teller'] == 5){
-        $sql = "UPDATE "
+    if($row['teller'] == 4){
+        $sql = "UPDATE users SET teller = 0, bonnen = bonnen + 1 WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
+    }else{
+        $sql = "UPDATE users SET teller = teller + 1 WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
     }
 }

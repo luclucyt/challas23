@@ -22,8 +22,10 @@
         }
 
         .swal2-popup{
-            background-color: #A7CD48;
+            background-color: #212529;
         }
+
+
 
         .center-element {
         margin: auto;
@@ -73,6 +75,10 @@
         .vormpje6 {
             bottom: 5px;
             right: 0px;
+        }
+
+        .toggle-signup{
+            cursor: pointer;
         }
 
     </style>

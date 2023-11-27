@@ -5,6 +5,7 @@ const signupForm = document.querySelector(".signup-wrapper");
 
 let hasLoginFocus = true;
 function switchForm() {
+
     if (hasLoginFocus === false) {
         loginForm.style.display = "none";
         signupForm.style.display = "block";
