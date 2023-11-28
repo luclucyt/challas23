@@ -6,8 +6,8 @@ const ctx = canvas.getContext("2d");
 
 let hasSeen = false;
 
-video.style.backgroundColor = "black";
-canvas.style.backgroundColor = "black";
+// video.style.backgroundColor = "black";
+// canvas.style.backgroundColor = "black";
 
 async function getCameraSelection() {
     try {
@@ -44,8 +44,11 @@ function captureFrame() {
 
         hasSeen = true;
 
+        const adminType = document.querySelector('.admin-type').value;
+
         let formData = new FormData;
         formData.append('code', code.data)
+        formData.append('adminType', adminType)
 
         let xhr = new XMLHttpRequest();
         xhr.open('POST', 'inc/qrScan.php', true);

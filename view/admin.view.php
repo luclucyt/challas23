@@ -14,12 +14,20 @@
 
 <body>
     <video id="preview"></video>
+
+    <select class="admin-type">
+        <option value="eten">eten</option>
+        <option value="activiteit">activiteit</option>
+    </select>
+
     <div id="info">
         <p id="foto"><img src="../IMG/coole shit.jpg" alt=""></p>
         <p id="naam">Naam:</p>
         <p id="email">E-mail:</p>
         <p id="aanmeldingen">Aanmeldigen:</p>
     </div>
+
+
 </body>
 
 </html>
