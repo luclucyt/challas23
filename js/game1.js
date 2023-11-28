@@ -1,13 +1,11 @@
-// to:do :
-//         3. socials toevoegen aan pagina
-//         4. sound effects toevoegen
-//         1. dynamicse score toevoegen
+
 
 //--------------------VARIABLES--------------------\\
 let kong = document.getElementById("kong");
 let banana = document.getElementById("banana");
 let scoreText = document.getElementsByTagName("h1")[0];
-let position = 50;
+let positionX = 412;
+let positionY = 914;
 let score = 0;
 let speed = -10;
 let positionBanna = -10;
@@ -21,7 +19,7 @@ let pauze = true;
 //--------------------ONLOAD--------------------\\
 function init(){
     document.addEventListener('keydown', controls);
-    kong.style.left = position + "px";
+    kong.style.left = positionX + "px";
     scoreText.innerText = "0";
     gameEngine(); //direct starten
     setInterval(gameEngine, 25); // herhaal 120 ms
@@ -95,15 +93,22 @@ function gameEngine(){
     //if mode is auto, move kong automatically 
   
     //check if kong is out of bounds, if so teleport him to the other side
-    if(position < -412){
-        position = 412;
-        kong.style.left = position + "px";
+    if(positionX < -412){
+        positionX = 412;
+        kong.style.left = positionX + "px";
     }
-    if(position > 412){
-        position = -412;
-        kong.style.left = position + "px";
+    if(positionX > 412){
+        positionX = -412;
+        kong.style.left = positionX + "px";
     }
-
+    if(positionY > -914){
+        positionY = 914;
+        kong.style.up = positionY + "px";
+    }
+    if(positionY > 914){
+        positionY = -914;
+        kong.style.up = positionY + "px";
+    }
 
 
 
@@ -123,10 +128,10 @@ function controls(event) {
             moveRight();
         }
 
-        if(key == "s" || key == "ArrowDown"){
+        if(key == "s" || key == "ArrowDown" || direction == "down"){
             moveDown();
         }
-        if(key == "w" || key == "ArrowUp"){
+        if(key == "w" || key == "ArrowUp" || direction == "up"){
             moveUp();
         }
     }
@@ -168,8 +173,8 @@ function controls(event) {
 //--------------------MOVEMENT--------------------\\
 function moveLeft(){
     if(pauze == false){
-        position -= 15;
-        kong.style.left = position + "px";
+        positionX -= 15;
+        kong.style.left = positionX + "px";
         kong.style.transform = "scaleX(-1)";
         direction = "left";
     }
@@ -177,13 +182,28 @@ function moveLeft(){
 
 function moveRight(){
     if(pauze == false){
-        position += 15;
-        kong.style.left = position + "px";
+        positionX += 15;
+        kong.style.left = positionX + "px";
         kong.style.transform = "scaleX(+1)";
         direction = "right";
     }
 }
-
+function moveUp(){
+    if(pauze == false){
+        positionY += 15;
+        kong.style.left = positionY + "px";
+        kong.style.transform = "scaleX(+1)";
+        direction = "up";
+    }
+}
+function moveDown(){
+    if(pauze == false){
+        positionY += 15;
+        kong.style.left = positionY + "px";
+        kong.style.transform = "scaleX(+1)";
+        direction = "down";
+    }
+}
 
 
 
@@ -229,8 +249,11 @@ function MoveControls(){
         if(direction == "right"){
             moveRight();
         }
-        if(direction == ""){
-            stop();
+        if(direction == "down"){
+            moveDown();
+        }
+        if(direction == "up"){
+            moveUp();
         }
     }
 }
