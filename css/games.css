@@ -16,7 +16,7 @@
 
 #game1 {
     width: 80vw;
-    height: 30%;
+    height: 20%;
     min-height: 120px;
     background-image:
         linear-gradient(to top right, transparent 50%, red 0);
@@ -27,8 +27,8 @@
 }
 
 #game2{
-    position: absolute;
-    height: 30%;
+
+    height: 20%;
     width: 80vw;
     top: 20%;
     
@@ -54,12 +54,12 @@
 }
 #game3 {
     width: 80vw;
-    height: 30%;
+    height: 20%;
     min-height: 100px;
     background-image:
         linear-gradient(to bottom right, transparent 50%, red 0);
     background-repeat: no-repeat;
     background-position: left, right;
-    margin-top: 100px;
+    margin-top: 50%;
 }
 
