@@ -1,10 +1,17 @@
 <?php
 $server = "localhost";
-$user = "LucasDatabase";//"challas";
-$password = "LucasDatabase";//"gRET-McXS-4k9S-Y_yv-4h&j-E";
+$user = "challas";
+$password = "gRET-McXS-4k9S-Y_yv-4h&j-E";
 $database = "challas";
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $conn = mysqli_connect($server, $user, $password, $database);
+
+if(!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
