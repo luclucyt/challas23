@@ -2,19 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="../css/game1.css">
-    <title>Flappy Bird</title>
+    <title>space invader</title>
 </head>
 <body>
-    <div id="game-container">
-        <div id="flappy-bird"></div>
-    </div>
-    <div id="score-container">
-        <p id="score">Score: 0</p>
-        <p id="record">Record: 0</p>
-        <button id="retry-btn">Retry</button>
-    </div>
+    <main>
+        <div id="stage">
+            <div id="score">
+                <h1 > 0 </h1>
+            </div>
+            <div id="kong" class="bounce">       
+            </div>
+            <div id="banana">     
+            </div>    
+        </div>
+        <div id="HPwrapper">
+            <div class="bar" id="bar1"><br>
+                <img class="hart" src="images/oofhart.png">
+            </div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>        
+            <div class="bar" id="bar4"></div>
+            <div class="bar" id="bar5"></div>
+            <div class="bar" id="bar6"></div>        
+            <div class="bar" id="bar7"></div>
+            <div class="bar" id="bar8"></div>
+            <div class="bar" id="bar9"></div>        
+            <div class="bar" id="bar10"><br>
+                <img class="hart" src="../IMG/vormpje1.png">
+            </div>
+    </main>
     <script src="../js/game1.js"></script>
 </body>
 </html>
