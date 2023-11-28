@@ -19,21 +19,6 @@
             <div id="banana">     
             </div>    
         </div>
-        <div id="HPwrapper">
-            <div class="bar" id="bar1"><br>
-                <img class="hart" src="images/oofhart.png">
-            </div>
-            <div class="bar" id="bar2"></div>
-            <div class="bar" id="bar3"></div>        
-            <div class="bar" id="bar4"></div>
-            <div class="bar" id="bar5"></div>
-            <div class="bar" id="bar6"></div>        
-            <div class="bar" id="bar7"></div>
-            <div class="bar" id="bar8"></div>
-            <div class="bar" id="bar9"></div>        
-            <div class="bar" id="bar10"><br>
-                <img class="hart" src="../IMG/vormpje1.png">
-            </div>
     </main>
     <script src="../js/game1.js"></script>
 </body>
