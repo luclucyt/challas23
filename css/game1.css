@@ -1,21 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+/* 
+*{
+    border: 1px solid blue;
+} 
+*/
 #stage {
-    max-width: 412px;
+    width: 412px;
     height: 914px;
     background-image: url(../IMG/space.jpg);
+
 }
 
 #kong {
     position: absolute;
     top: 500px;
-    left: 75px;
-    width: 200px;
-    height: 200px;
+    left: 50;
+    width: 240px;
+    height: 240px;
     background-image: url(../IMG/spaceship.png);
     background-repeat: no-repeat;
     background-size: contain;
-
-    
-    height: 240px;
 }
 
 #banana {
@@ -31,11 +39,45 @@
 }
 
 
+#score {
+    width: 130px;
+    height: 50px;
+    float: left;
+    margin: 25px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: white;
+} 
+
 h1 {
     padding: 0px;
     margin: 0px;
     line-height: 50px;
 }
+/* 
+.bounce {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+ 
+    transform-origin: bottom;
+    animation-timing-function: ease;
+    animation-name: bounce-6;
+}
+
+@keyframes bounce-6 {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-100px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+} */
+
+
+
+
 
 #stage{
     overflow-y: hidden;

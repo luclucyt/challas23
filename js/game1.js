@@ -7,7 +7,7 @@
 let kong = document.getElementById("kong");
 let banana = document.getElementById("banana");
 let scoreText = document.getElementsByTagName("h1")[0];
-let position = 400;
+let position = 50;
 let score = 0;
 let speed = -10;
 let positionBanna = -10;
@@ -49,6 +49,12 @@ function gameEngine(){
         if(direction == "right"){
             moveRight();
         }
+        if(direction == "down"){
+            moveDown();
+        }
+        if(direction == "up"){
+            moveUp();
+        }
 
 
         //make the speed of the banana increase over time acroding to the score
@@ -62,7 +68,7 @@ function gameEngine(){
 
 
         //move banana down until it hits the ground 
-        if(positionBanna < 655){
+        if(positionBanna < 914){
             banana.style.top = positionBanna + "px";
             positionBanna -= speed;
         }
@@ -77,8 +83,7 @@ function gameEngine(){
         //if heathpoints are 0, reset heathpoints and score
         if(heathPoints == 0){
             for(let i = 1; i < 11; i++){
-                let heathPointDiv = document.getElementById("bar" + i);
-                heathPointDiv.style.backgroundColor = "#00ff08ee";
+
             }     
             alert("Game over");
             heathPoints = 10;
@@ -88,28 +93,20 @@ function gameEngine(){
     }
 
     //if mode is auto, move kong automatically 
-    if(mode == "auto"){
-        MoveControls();
-    }
-
+  
     //check if kong is out of bounds, if so teleport him to the other side
-    if(position < -150){
-        position = 1250;
+    if(position < -412){
+        position = 412;
         kong.style.left = position + "px";
     }
-    if(position > 1250){
-        position = -150;
+    if(position > 412){
+        position = -412;
         kong.style.left = position + "px";
     }
 
 
-    if(mode == "auto"){
-        heathPoints = 10;
-        for(let i = 1; i < 11; i++){
-            let heathPointDiv = document.getElementById("bar" + i);
-            heathPointDiv.style.backgroundColor = "#00ff08";
-        }
-    }
+
+
 }
 
 //--------------------INPUT HANDLING--------------------\\
@@ -127,7 +124,10 @@ function controls(event) {
         }
 
         if(key == "s" || key == "ArrowDown"){
-            stop();
+            moveDown();
+        }
+        if(key == "w" || key == "ArrowUp"){
+            moveUp();
         }
     }
 
@@ -146,18 +146,7 @@ function controls(event) {
                 heathPointDiv.style.backgroundColor = "#00ff08ee";
             }
 
-        } else{
-            mode = "auto";
-            console.log("auto");
-
-            score = 0;
-            scoreText.innerText = score;
-            heathPoints = 10;
-            for(let i = 1; i < 11; i++){
-                let heathPointDiv = document.getElementById("bar" + i);
-                heathPointDiv.style.backgroundColor = "#00ff08ee";
-            }
-        }
+        } 
         
     }
 
@@ -195,11 +184,8 @@ function moveRight(){
     }
 }
 
-function stop(){
-    position += 0;
-    direction = "";
-    kong.style.left = position + "px";
-}
+
+
 
 
 
@@ -208,7 +194,7 @@ function generateBanana(){
     
     // banaan mag niet buiten de stage staan 1000px
     // maak er tientallen van met *10 
-    let bananaSpawn = Math.floor(Math.random() * 120)*10 + "px";
+    let bananaSpawn = Math.floor(Math.random() * 40)*10 + "px";
     banana.style.left = bananaSpawn;
 };
 
@@ -245,18 +231,6 @@ function MoveControls(){
         }
         if(direction == ""){
             stop();
-        }
-    }else if(mode == "auto"){
-        // auto mode
-        if(kongbox.left > bananbox.left && kongbox.right < bananbox.right){
-            console.log("stop");
-            stop();
-        }else if(kongbox.left > bananbox.right ){
-            console.log("links");
-            moveLeft();
-        }else if(kongbox.right < bananbox.left ){
-            console.log("rechts");
-            moveRight();
         }
     }
 }
