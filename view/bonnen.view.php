@@ -18,7 +18,7 @@
         </div>
 
         <div class="activiteiten-wrapper">
-            Je moet nog <?= 4 - $_SESSION['teller'] ?> activiteiten doen om een bon te krijgen.
+            Je moet nog <?= 5 - $_SESSION['teller'] ?> activiteiten doen om een bon te krijgen.
         </div>
 
         <div class="bonnen-wrapper">

@@ -55,7 +55,12 @@ function captureFrame() {
 
         xhr.onload = function(){
             let response = this.response;
-            response = JSON.parse(response);
+            try{
+                response = JSON.parse(response);
+            }catch(e){
+                console.log(e)
+                response = [0, 'Er is iets fout gegaan!']
+            }
 
             console.log(response)
 

@@ -20,14 +20,16 @@
 
     $sql = "SELECT * FROM `confirm` WHERE `linkID` = '$link'";
     $result = mysqli_query($conn, $sql);
-
-    if(mysqli_num_rows($result) == 0) {
-        echo "Geen gelde Code";
-        exit;
-    }
-   
     $row = mysqli_fetch_assoc($result);
     $userID = $row['userID'];
+
+    $sql = "SELECT * FROM `users` WHERE `userID` = '$userID'";
+    $result = mysqli_query($conn, $sql);
+
+    if(mysqli_num_rows($result) == 0) {
+        echo "Geen gebruiker gevonden";
+        exit;
+    }
 
     $sql = "UPDATE `users` SET `isAllowed` = 1 WHERE `userID` = '$userID'";
     $result = mysqli_query($conn, $sql);
