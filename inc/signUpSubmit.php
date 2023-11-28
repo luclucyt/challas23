@@ -87,7 +87,7 @@ function signUp() : array {
     $userCode = bin2hex(random_bytes(16));
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (userID, name, email, password, bonnen, gebruikteBonnen teller, isAdmin, isAllowed) VALUES ('$userCode', '$naam', '$email', '$password', 0, 0, 0, 0, 0)";
+    $sql = "INSERT INTO users (userID, name, email, password, bonnen, gebruikteBonnen, teller, isAdmin, isAllowed) VALUES ('$userCode', '$naam', '$email', '$password', 0, 0, 0, 0, 0)";
     $result = mysqli_query($conn, $sql);
 
     if(!$result) {

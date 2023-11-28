@@ -1,10 +1,9 @@
 <?php
 include '_database.php';
 
-
 echo json_encode(scanQR());
 
-function scanQR(){
+function scanQR(): array{
     global $conn;
 
     if(!isset($_POST['code'])){
@@ -27,7 +26,6 @@ function scanQR(){
     $adminType = cleanData($adminType);
 
    
-
     $sql = "SELECT * FROM users WHERE userID = '$code'";
     $result = mysqli_query($conn, $sql);
 
@@ -38,11 +36,12 @@ function scanQR(){
     if($adminType == "eten"){
         $sql = "UPDATE users set gebruikteBonnen = gebruikteBonnen + 1 WHERE userID = '$code'";
         $result = mysqli_query($conn, $sql);
+
         $row = mysqli_fetch_assoc($result);
         if($row['gebruikteBonnen'] == 4){
             return [0, "Gebruiker heeft al 4 bonnen gebruikt"];
         }
-        
+
         if(!$result){
             return [0, "Gebruiker kunnen updaten"];
         }

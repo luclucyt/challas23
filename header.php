@@ -58,11 +58,9 @@
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <?php endif; ?>
-                    <?php if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="admin.php">admin</a>
                         </li>
-                    <?php endif; ?>
                 </ul>
             </div>
         </div>
