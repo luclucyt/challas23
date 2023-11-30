@@ -5,7 +5,7 @@ let kong = document.getElementById("kong");
 let banana = document.getElementById("banana");
 let scoreText = document.getElementsByTagName("h1")[0];
 let positionX = 412;
-let positionY = 412;
+let positionY = 914;
 let score = 0;
 let speed = -10;
 let positionBanna = -10;
@@ -20,7 +20,6 @@ let pauze = true;
 function init(){
     document.addEventListener('keydown', controls);
     kong.style.left = positionX + "px";
-    kong.style.top = positionY + "px";
     scoreText.innerText = "0";
     gameEngine(); //direct starten
     setInterval(gameEngine, 25); // herhaal 120 ms
@@ -67,7 +66,7 @@ function gameEngine(){
 
 
         //move banana down until it hits the ground 
-        if(top < 914){
+        if(positionBanna < 914){
             banana.style.top = positionBanna + "px";
             positionBanna -= speed;
         }
@@ -104,11 +103,11 @@ function gameEngine(){
     }
     if(positionY > -914){
         positionY = 914;
-        kong.style.top = positionY + "px";
+        kong.style.up = positionY + "px";
     }
     if(positionY > 914){
         positionY = -914;
-        kong.style.top = positionY + "px";
+        kong.style.up = positionY + "px";
     }
 
 
@@ -191,17 +190,17 @@ function moveRight(){
 }
 function moveUp(){
     if(pauze == false){
-        positionY -= 15;
-        kong.style.top = positionY + "px";
-        kong.style.transform = "scaleY(-1)";
+        positionY += 15;
+        kong.style.left = positionY + "px";
+        kong.style.transform = "scaleX(+1)";
         direction = "up";
     }
 }
 function moveDown(){
     if(pauze == false){
         positionY += 15;
-        kong.style.top = positionY + "px";
-        kong.style.transform = "scaleY(+1)";
+        kong.style.left = positionY + "px";
+        kong.style.transform = "scaleX(+1)";
         direction = "down";
     }
 }
