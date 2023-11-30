@@ -50,7 +50,7 @@
                         <a class="nav-link" href="informatie.php">Informatie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="games.php">Wacht rij games</a>
+                        <a class="nav-link" href="games.php">Wachtrij games</a>
                     </li>
 
                     <?php if(!isset($_SESSION['userID'])): ?>

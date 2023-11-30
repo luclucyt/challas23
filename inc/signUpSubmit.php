@@ -87,7 +87,7 @@ function signUp() : array {
     $userCode = bin2hex(random_bytes(16));
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (userID, name, email, password, bonnen, gebruikteBonnen, teller, isAdmin, isAllowed) VALUES ('$userCode', '$naam', '$email', '$password', 0, 0, 0, 0, 0)";
+    $sql = "INSERT INTO users (userID, name, email, password, bonnen, gebruikteBonnen, teller, isAdmin, isAllowed) VALUES ('$userCode', '$naam', '$email', '$password', 1, 0, 0, 0, 0)";
     $result = mysqli_query($conn, $sql);
 
     if(!$result) {
@@ -110,7 +110,7 @@ function signUp() : array {
         Bedankt voor het aanmaken van een account op Challas '23.<br>
         Klik op de onderstaande link om je account te activeren.<br><br>
         <a href='http://{$_SERVER['SERVER_NAME']}/confirm.php?link={$linkCode}' target='_blank'>Account activeren</a><br>
-        Geen account aangemaakt? Negeer deze email.<br><br>
+        Geen account aangemaakt? Negeer deze email.
         "
     );
     $mail->prepareMail();
@@ -124,4 +124,3 @@ function signUp() : array {
 
     return [1, "Account aangemaakt, controleer je email om je account te activeren"];
 }
-
