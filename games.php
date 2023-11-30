@@ -1,4 +1,4 @@
 <?php 
 
     include 'header.php';
-    include 'view/games.view.html';
+    include 'view/games.view.php';
