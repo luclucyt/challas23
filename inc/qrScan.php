@@ -34,7 +34,8 @@ function scanQR(): array{
     }
 
     if($adminType == "eten"){
-        $sql = "UPDATE users set gebruikteBonnen = gebruikteBonnen + 1 WHERE userID = '$code'";
+
+        $sql = "SELECT * FROM users WHERE userID = '$code'";
         $result = mysqli_query($conn, $sql);
 
         $row = mysqli_fetch_assoc($result);
@@ -42,11 +43,14 @@ function scanQR(): array{
             return [0, "Gebruiker heeft al 4 bonnen gebruikt"];
         }
 
-        if(!$result){
-            return [0, "Gebruiker kunnen updaten"];
+        if($row['bonnen'] <= $row['gebruikteBonnen']){
+            return [0, "Gebruiker heeft geen bonnen meer"];
         }
-        
-        return [1, "Gebruiker geupdate"];
+
+        $sql = "UPDATE users set gebruikteBonnen = gebruikteBonnen + 1 WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
+
+        return [1, "Gebruiker heeft 1 bon gebruikt"];
     }
 
     $row = mysqli_fetch_assoc($result);
