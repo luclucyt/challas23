@@ -19,14 +19,8 @@
 
 <body>
     <h2 id="naam">Challas</h2>
-    <p id="info">Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit. Aenean sit 
-        amet massa vitae magna lobortis dapibus. 
-        Phasellus nunc elit, commodo ut aliquam cursus, 
-         nec lacus. Curabitur a turpis quis est varius pretium. 
-         Nam eu ligula mauris. Quisque tempus dapibus erat sed 
-         tincidunt. Nullam quis sapien lorem. Maecenas 
-         vitae lectus et urna dictum fringilla. Suspendisse auctor</p>
+    <p id="info">sluit 2023</p>
+    <p id="info">goed af</p>
     <div class="test"></div>
 </body>
 </html>

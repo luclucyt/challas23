@@ -11,20 +11,29 @@
     color: #a7cd48;
     margin-top: 5vh;
 
-
-    font-size: 200%;
+    letter-spacing: 20px;
+    font-size: 300%;
     text-shadow: rgba(0, 255, 0, 0.737) 2px 0px 10px;
     text-shadow: 0 0 10em rgb(0, 255, 0), 0 0 0.5em rgb(0, 255, 0);
     transition: font-size ease 0.2s ;
     white-space: nowrap; 
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
 #info {
     text-align: center;
     margin-bottom: 5px;
+    font-family: "Changeling Neo W01 Bold"; 
     color: #a7cd48;
-    font-family: 'century-gothic-bold', sans-serif;
-    margin-top: 2vh;
+    margin-top: 3vh;
+
+    letter-spacing: 20px;
+    font-size: 150%;
+    text-shadow: rgba(0, 255, 0, 0.737) 2px 0px 10px;
+    text-shadow: 0 0 10em rgb(0, 255, 0), 0 0 0.5em rgb(0, 255, 0);
+    transition: font-size ease 0.2s ;
+    white-space: nowrap; 
 }
 
 .test{
