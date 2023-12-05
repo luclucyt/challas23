@@ -1,4 +1,6 @@
 <?php
 
 include 'header.php';
-include 'view/informatie.view.html';
+
+include 'inc/_database.php';
+include 'view/informatie.view.php';

@@ -1,0 +1,65 @@
+body {
+    height: 100vh;
+    /*background: linear-gradient(150deg, rgba(143, 81, 144, 1) 2%, rgba(167, 205, 72, 1) 29%, rgba(193, 65, 104, 1) 55%, rgba(188, 86, 55, 1) 61%, rgba(223, 199, 54, 1) 86%, rgba(81, 153, 191, 0.86) 100%);*/
+    background-image: url("../IMG/background-_1__1.webp");    
+    background-size: cover;
+    background-position: 90% 0;
+}
+
+.swal2-popup{
+    background-color: #212529;
+}
+
+.center-element {
+margin: auto;
+position: absolute;
+top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.card {
+    z-index: 1;
+    /*border: 0.2rem solid purple;
+    box-shadow: 0 0 .2rem purple,
+    0 0 .2rem purple,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe; */
+}
+
+.kop {
+    color: #A7CD48;
+    font-family: "Changeling Neo W01 Bold";
+}
+
+.tekst {
+    color: #C14168!important;
+    font-family: 'century-gothic-bold', sans-serif ;
+}
+
+.submit-button {
+    border-color:  #C14168!important;
+}
+
+.vormpje1 {
+    z-index: -1;
+    top: -20px; 
+    left: -20px; 
+}
+.vormpje4 {
+    bottom: 0px;
+    right: 15px;
+}
+.vormpje5 {
+    z-index: -1;
+    bottom: 0;
+
+}
+.vormpje6 {
+    bottom: 5px;
+    right: 0px;
+}
+
+.toggle-signup{
+    cursor: pointer;
+}

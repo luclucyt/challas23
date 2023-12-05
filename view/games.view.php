@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wachtrij games</title>
-    <script src="../js/gamestest.js"></script>
+
+    <!-- Javascript -->
+    <script src="../js/gamestest.js" defer></script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/games.css">
 </head>
 <body>
