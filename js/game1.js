@@ -1,265 +1,189 @@
+let tileSize = 33;
+let rows = 27;
+let columns = 12;
 
+let board;
+let boardWidth = tileSize * columns;
+let boardHeight = tileSize * rows;
+let context;
 
-//--------------------VARIABLES--------------------\\
-let kong = document.getElementById("kong");
-let banana = document.getElementById("banana");
-let scoreText = document.getElementsByTagName("h1")[0];
-let positionX = 412;
-let positionY = 914;
+let shipWidth = tileSize*2;
+let shipHeight = tileSize*2;
+let shipX = tileSize * columns/2 - tileSize;
+let shipY = tileSize * rows - tileSize*3;
+
+let ship = {
+    x : shipX,
+    y : shipY,
+    width : shipWidth,
+    height : shipHeight
+}
+
+let shipImg;
+let shipVelocityX = tileSize;
+
+let alienArray = []
+let alienWidth = tileSize*2;
+let alienHeight = tileSize*2;
+let alienX = tileSize;
+let alienY = tileSize;
+let alienImg;
+
+let alienRows = 2;
+let alienColumns = 3;
+let alienCount = 0;
+let alienVelocityX = 1;
+
+let bulletArray = [];
+let bulletVelocityY = -10;
+
 let score = 0;
-let speed = -10;
-let positionBanna = -10;
-let heathPoints = 10;
+let gameOver = false;
 
-let direction = "";
-let mode = "manual";
+window.onload = function() {
+    board = document.getElementById("board");
+    board.width = boardWidth;
+    board.height = boardHeight;
+    context = board.getContext("2d");
 
-let pauze = true;
+    //context.fillStyle="green";
+    //context.fillRect(ship.x, ship.y, ship.width, ship.height);
 
-//--------------------ONLOAD--------------------\\
-function init(){
-    document.addEventListener('keydown', controls);
-    kong.style.left = positionX + "px";
-    scoreText.innerText = "0";
-    gameEngine(); //direct starten
-    setInterval(gameEngine, 25); // herhaal 120 ms
-    generateBanana();
+    shipImg = new Image();
+    shipImg.src = "../IMG/spaceship.png"
+    shipImg.onload = function() {
+        context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
+    }
+
+    alienImg = new Image();
+    alienImg.src = "../IMG/vormpje1.png";
+    createAliens();
+    
+    requestAnimationFrame(update);
+    document.addEventListener("keydown", moveShip);
+    document.addEventListener("keyup", shoot);
 }
 
-//--------------------LOOP--------------------\\
-function gameEngine(){
-    if(pauze == false){
-        //  bounding box
-        let kongbox = getBoundingBox(kong);
-        let bananbox = getBoundingBox(banana);
-        
-        // maak hier onder de fuctie om de hoogte te pakkes shit ja cool
-        if(kongbox.left < bananbox.right && kongbox.right > bananbox.left && kongbox.top < bananbox.bottom && kongbox.bottom > bananbox.bottom){
-            console.log("hebbes");
-            generateBanana();
-            addScore()
-            positionBanna = -10;
-        }
+function update() {
+    requestAnimationFrame(update);
 
-        if(direction == "left"){
-            moveLeft();
-        }
-        if(direction == "right"){
-            moveRight();
-        }
-        if(direction == "down"){
-            moveDown();
-        }
-        if(direction == "up"){
-            moveUp();
-        }
-
-
-        //make the speed of the banana increase over time acroding to the score
-        if(score > 0 && score % 10 == 0){
-            speed -= 1;
-        }
-        //give the speed a cap
-        if(speed < -15){
-            speed = -15;
-        }
-
-
-        //move banana down until it hits the ground 
-        if(positionBanna < 914){
-            banana.style.top = positionBanna + "px";
-            positionBanna -= speed;
-        }
-        else{
-            positionBanna = -10;
-            generateBanana();
-            heathPoints--;
-            banana.style.top = positionBanna + "px";
-            updateHeathPoints();
-        }
-
-        //if heathpoints are 0, reset heathpoints and score
-        if(heathPoints == 0){
-            for(let i = 1; i < 11; i++){
-
-            }     
-            alert("Game over");
-            heathPoints = 10;
-            score = 0;
-            scoreText.innerText = score;
-        }     
+    if (gameOver) {
+        return;
     }
 
-    //if mode is auto, move kong automatically 
-  
-    //check if kong is out of bounds, if so teleport him to the other side
-    if(positionX < -412){
-        positionX = 412;
-        kong.style.left = positionX + "px";
-    }
-    if(positionX > 412){
-        positionX = -412;
-        kong.style.left = positionX + "px";
-    }
-    if(positionY > -914){
-        positionY = 914;
-        kong.style.up = positionY + "px";
-    }
-    if(positionY > 914){
-        positionY = -914;
-        kong.style.up = positionY + "px";
-    }
+    context.clearRect(0, 0, boardWidth, boardHeight);
 
+    context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
 
+    for (let i = 0; i < alienArray.length; i++) {
+        let alien = alienArray[i];
+        if (alien.alive) {
+            alien.x += alienVelocityX;
 
-}
+            if (alien.x + alien.width >= board.width || alien.x <= 0) {
+                alienVelocityX *= -1;
 
-//--------------------INPUT HANDLING--------------------\\
-function controls(event) {
-    let key = event.key;
-    if(mode == "manual"){
-        
-        //todo op basis van keycode , links of rechts aanroepen
-        if(key == "a" || key == "ArrowLeft" || key == "A" || direction == "left"){  
-            moveLeft();
-        }
-
-        if(key == "d" || key == "ArrowRight" || key == "D" || direction == "right"){
-            moveRight();
-        }
-
-        if(key == "s" || key == "ArrowDown" || direction == "down"){
-            moveDown();
-        }
-        if(key == "w" || key == "ArrowUp" || direction == "up"){
-            moveUp();
-        }
-    }
-
-    if(key == " " || key ==""){
-        if(mode == "auto"){
-            mode = "manual";
-            console.log("manual");
-            stop();
-
-            score = 0;
-            scoreText.innerText = score;
-            heathPoints = 10;
-
-            for(let i = 1; i < 11; i++){
-                let heathPointDiv = document.getElementById("bar" + i);
-                heathPointDiv.style.backgroundColor = "#00ff08ee";
+                for (let j = 0; j < alienArray.length; j++) {
+                    alienArray[j].y += alienHeight;
+                }
             }
+            context.drawImage(alienImg, alien.x, alien.y, alien.width, alien.height);
 
-        } 
-        
-    }
-
-    if(key == "p"){
-        if(pauze == false){
-            pauze = true;
-            
-        }else{
-            pauze = false;
+            if (alien.y + alien.height >= ship.y) {
+                gameOver = true;
+            }
         }
     }
-    else{
-        if(pauze == true){
-            pauze = false;
+
+    for (let i = 0; i < bulletArray.length; i++) {
+        let bullet = bulletArray[i];
+        bullet.y += bulletVelocityY;
+        context.fillStyle = "red";
+        context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height)
+
+        for (let j = 0; j < alienArray.length; j++) {
+            let alien = alienArray[j];
+            if (alien.alive && detectCollision(bullet, alien)) {
+                alien.alive = false;
+                bullet.used = true;
+                alienCount--;
+                score += 100;
+            }
         }
     }
-}
 
-//--------------------MOVEMENT--------------------\\
-function moveLeft(){
-    if(pauze == false){
-        positionX -= 15;
-        kong.style.left = positionX + "px";
-        kong.style.transform = "scaleX(-1)";
-        direction = "left";
-    }
-}
-
-function moveRight(){
-    if(pauze == false){
-        positionX += 15;
-        kong.style.left = positionX + "px";
-        kong.style.transform = "scaleX(+1)";
-        direction = "right";
-    }
-}
-function moveUp(){
-    if(pauze == false){
-        positionY += 15;
-        kong.style.left = positionY + "px";
-        kong.style.transform = "scaleX(+1)";
-        direction = "up";
-    }
-}
-function moveDown(){
-    if(pauze == false){
-        positionY += 15;
-        kong.style.left = positionY + "px";
-        kong.style.transform = "scaleX(+1)";
-        direction = "down";
-    }
-}
-
-
-
-
-
-function generateBanana(){
-    banana.style.opacity = 1;
+    while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y < 0)) {
+        bulletArray.shift();
     
-    // banaan mag niet buiten de stage staan 1000px
-    // maak er tientallen van met *10 
-    let bananaSpawn = Math.floor(Math.random() * 40)*10 + "px";
-    banana.style.left = bananaSpawn;
-};
+    }
 
-function addScore(){
-    score++;
-    scoreText.innerText = score;
+    if (alienCount == 0) {
+        alienColumns = Math.min(alienColumns + 1, columns/2 -2);
+        alienRows = Math.min(alienRows + 1, rows-4);
+        alienVelocityX += 0.2;
+        alienArray = [];
+        bulletArray = [];
+        createAliens();
+    }
+
+    context.fillStyle = "white";
+    context.font = "16px courier";
+    context.fillText(score, 5, 20);
 }
 
-// DO NOT TOUCH THIS FUNCTION EVER EVER EVER!
-function getBoundingBox(element){
-    let rect = element.getBoundingClientRect();
-    let left = rect.left - 1;
-    let right = rect.left + rect.width - 1;
-    let top = rect.top;
-    let bottom = rect.top + rect.height - 1;
-    
-    return {"left":left, "right":right, "top":top, "bottom":bottom};
-}
+function moveShip(e) {
 
+    if (gameOver) {
+        return;
+    }
 
-
-//switch between modes (auto/manual) 
-function MoveControls(){
-    let kongbox = getBoundingBox(kong);
-    let bananbox = getBoundingBox(banana);
-
-    if(mode == "manual"){
-        // manual mode
-        if(direction == "left"){
-            moveLeft();
-        }
-        if(direction == "right"){
-            moveRight();
-        }
-        if(direction == "down"){
-            moveDown();
-        }
-        if(direction == "up"){
-            moveUp();
-        }
+    if (e.code == "ArrowLeft" && ship.x - shipVelocityX >= 0) {
+        ship.x -= shipVelocityX;
+    }
+    else if (e.code == "ArrowRight" && ship.x - shipVelocityX + ship.width <= board.width) {
+        ship.x += shipVelocityX;
     }
 }
 
-function updateHeathPoints(){
-    let heathPointDiv = document.getElementById("bar" + (heathPoints + 1));
-    heathPointDiv.style.backgroundColor = "red";
+
+function createAliens() {
+    for (let c = 0; c <alienColumns; c++) {
+        for (let r = 0; r < alienRows; r++) {
+            let alien = {
+                img : alienImg,
+                x : alienX + c*alienWidth,
+                y : alienY + r*alienHeight,
+                width : alienWidth,
+                height : alienHeight,
+                alive : true
+            }
+            alienArray.push(alien)
+        }
+    }
+    alienCount = alienArray.length;
 }
-init();
+
+function shoot(e) {
+
+    if (gameOver) {
+        return;
+    }
+
+    if (e.code == "Space") {
+        let bullet = {
+            x : ship.x + ship.width*12/33,
+            y : ship.y,
+            width : tileSize/8,
+            height : tileSize/2,
+            used : false
+        }
+        bulletArray.push(bullet);
+    }
+}
+
+function detectCollision(a, b) {
+    return a.x < b.x + b.width &&
+        a.x + a.width > b.x &&
+        a.y < b.y + b.height &&
+        a.y + a.height > b.y
+}
