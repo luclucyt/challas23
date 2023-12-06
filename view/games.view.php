@@ -9,7 +9,7 @@
     <!--<script src="../js/gamestest.js" defer></script>-->
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="../css/games.css">
 </head>
 <body>
     <main>
