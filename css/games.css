@@ -57,7 +57,7 @@ main{
     border-style: solid;
     border-image:
         linear-gradient(
-            to bottom right,
+            to bottom,
             #8fe507,
             #C14168
         ) 1 1;
@@ -75,7 +75,7 @@ main{
     border-style: solid;
     border-image:
         linear-gradient(
-            to bottom right,
+            to bottom left,
             #C14168,
             #ffe44c
         ) 1 1;
