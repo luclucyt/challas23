@@ -13,7 +13,7 @@
     <div id="canvas-container">
         <canvas id="board"></canvas>
         
-
+    
         <div id="buttons-container">
             <button id="leftButton">Left</button>
             <button id="rightButton">Right</button>

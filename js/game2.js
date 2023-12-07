@@ -32,7 +32,7 @@ let bottomPipeImg;
 //physics
 let velocityX = -2; //pipes moving left speed
 let velocityY = 0; //bird jump speed
-let gravity = 0.4;
+let gravity = .2;
 
 let gameOver = false;
 let score = 0;
@@ -62,7 +62,7 @@ window.onload = function() {
 
     requestAnimationFrame(update);
     setInterval(placePipes, 1500); //every 1.5 seconds
-    document.addEventListener("keydown", moveBird);
+    document.addEventListener("click", moveBird);
 }
 
 function update() {
@@ -146,7 +146,8 @@ function placePipes() {
 }
 
 function moveBird(e) {
-    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
+    //if the key is space or up arrow or x or mobile tap
+    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX" || e.type == "click") {
         //jump
         velocityY = -6;
 
