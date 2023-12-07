@@ -6,8 +6,10 @@ const ctx = canvas.getContext("2d");
 
 let hasSeen = false;
 
-// video.style.backgroundColor = "black";
-// canvas.style.backgroundColor = "black";
+console.log("test")
+
+video.style.backgroundColor = "black";
+canvas.style.backgroundColor = "black";
 
 async function getCameraSelection() {
     try {
