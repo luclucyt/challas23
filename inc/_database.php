@@ -1,7 +1,7 @@
 <?php
 $server = "localhost";
-$user = file_get_contents("../data/DB_user.txt");;
-$password = file_get_contents("../data/DB_pw.txt");
+$user = "challas";
+$password = "gRET-McXS-4k9S-Y_yv-4h&j-E";
 $database = "challas";
 
 error_reporting(E_ALL);
@@ -12,7 +12,6 @@ $conn = mysqli_connect($server, $user, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 session_start();
 
 function cleanData($data) {

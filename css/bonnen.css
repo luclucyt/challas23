@@ -2,7 +2,9 @@ body {
     height: 100vh;
     background-image: url("../IMG/background-_1__1.webp");
     background-size: cover;
-    background-position: 90% 0;
+    background-position: 90% 0;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .qr_code {
@@ -11,6 +13,7 @@ body {
     display: flex;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .qr_code img {
@@ -19,4 +22,15 @@ body {
     border-radius: 10px;
     background: #e0e0e0;
     box-shadow:  16px 16px 32px #201f1f, -16px -16px 32px #4e4b4b;
+}
+
+.activiteiten-wrapper, .bonnen-wrapper{
+    color: white;
+    text-align: center;
+}
+
+.word-wrapper{
+    display: flex;
+    justify-content: center;
+    
 }

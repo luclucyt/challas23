@@ -14,6 +14,8 @@
     <style>
         .navbar {
             z-index: 999;
+            position: sticky;
+            top: 0;
         }
         .navbar-toggler {
             border-color: white;
@@ -59,7 +61,7 @@
                     </li>
                     <?php endif; ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="admin.php">admin</a>
+                            <a class="nav-link" href="admin.php">Admin</a>
                         </li>
                 </ul>
             </div>
