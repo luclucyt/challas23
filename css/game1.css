@@ -20,18 +20,23 @@
     margin: 0 50px;
 }
 
-#canvas-container {
-    position: relative;
-}
 
 canvas {
     display: block;
 }
 
+
+
+#canvas-container {
+    position: relative;
+    text-align: center;
+}
+
 #buttons-container {
     position: absolute;
     bottom: 10px;
-    left: 12%;
+    width: 100%;
+    left: 50%;
     transform: translateX(-50%);
 }
 
