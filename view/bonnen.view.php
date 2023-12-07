@@ -25,6 +25,13 @@
         <div class="bonnen-wrapper">
             Je hebt <?= $_SESSION['bonnen'] ?> bonnen.
         </div>
+
+        <div class="word-wrapper">
+            <form>
+                <input type="text" name="woord" placeholder="woord">
+                <input type="submit" value="Controleer">
+            </form>
+        </div>
     </div>
 </body>
 </html>

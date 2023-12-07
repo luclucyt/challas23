@@ -7,24 +7,24 @@ let boardWidth = tileSize * columns;
 let boardHeight = tileSize * rows;
 let context;
 
-let shipWidth = tileSize*2;
-let shipHeight = tileSize*2;
-let shipX = tileSize * columns/2 - tileSize;
-let shipY = tileSize * rows - tileSize*3;
+let shipWidth = tileSize * 2;
+let shipHeight = tileSize * 2;
+let shipX = tileSize * columns / 2 - tileSize;
+let shipY = tileSize * rows - tileSize * 4;
 
 let ship = {
-    x : shipX,
-    y : shipY,
-    width : shipWidth,
-    height : shipHeight
+    x: shipX,
+    y: shipY,
+    width: shipWidth,
+    height: shipHeight
 }
 
 let shipImg;
 let shipVelocityX = tileSize;
 
 let alienArray = []
-let alienWidth = tileSize*2;
-let alienHeight = tileSize*2;
+let alienWidth = tileSize * 1.5;
+let alienHeight = tileSize * 1.5;
 let alienX = tileSize;
 let alienY = tileSize;
 let alienImg;
@@ -40,28 +40,34 @@ let bulletVelocityY = -10;
 let score = 0;
 let gameOver = false;
 
-window.onload = function() {
+window.onload = function () {
     board = document.getElementById("board");
     board.width = boardWidth;
     board.height = boardHeight;
     context = board.getContext("2d");
 
-    //context.fillStyle="green";
-    //context.fillRect(ship.x, ship.y, ship.width, ship.height);
-
     shipImg = new Image();
     shipImg.src = "../IMG/spaceship.png"
-    shipImg.onload = function() {
+    shipImg.onload = function () {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
 
     alienImg = new Image();
     alienImg.src = "../IMG/vormpje1.png";
     createAliens();
-    
+
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveShip);
     document.addEventListener("keyup", shoot);
+
+
+    document.getElementById("leftButton").addEventListener("click", function () {
+        moveShipLeft();
+    });
+
+    document.getElementById("rightButton").addEventListener("click", function () {
+        moveShipRight();
+    });
 }
 
 function update() {
@@ -114,12 +120,11 @@ function update() {
 
     while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y < 0)) {
         bulletArray.shift();
-    
     }
 
     if (alienCount == 0) {
-        alienColumns = Math.min(alienColumns + 1, columns/2 -2);
-        alienRows = Math.min(alienRows + 1, rows-4);
+        alienColumns = Math.min(alienColumns + 1, columns / 2 - 2);
+        alienRows = Math.min(alienRows + 1, rows - 4);
         alienVelocityX += 0.2;
         alienArray = [];
         bulletArray = [];
@@ -132,30 +137,47 @@ function update() {
 }
 
 function moveShip(e) {
-
     if (gameOver) {
         return;
     }
 
     if (e.code == "ArrowLeft" && ship.x - shipVelocityX >= 0) {
         ship.x -= shipVelocityX;
-    }
-    else if (e.code == "ArrowRight" && ship.x - shipVelocityX + ship.width <= board.width) {
+    } else if (e.code == "ArrowRight" && ship.x - shipVelocityX + ship.width <= board.width) {
         ship.x += shipVelocityX;
     }
 }
 
+function moveShipLeft() {
+    if (gameOver) {
+        return;
+    }
+
+    if (ship.x - shipVelocityX >= 0) {
+        ship.x -= shipVelocityX;
+    }
+}
+
+function moveShipRight() {
+    if (gameOver) {
+        return;
+    }
+
+    if (ship.x + shipVelocityX + ship.width <= board.width) {
+        ship.x += shipVelocityX;
+    }
+}
 
 function createAliens() {
-    for (let c = 0; c <alienColumns; c++) {
+    for (let c = 0; c < alienColumns; c++) {
         for (let r = 0; r < alienRows; r++) {
             let alien = {
-                img : alienImg,
-                x : alienX + c*alienWidth,
-                y : alienY + r*alienHeight,
-                width : alienWidth,
-                height : alienHeight,
-                alive : true
+                img: alienImg,
+                x: alienX + c * alienWidth,
+                y: alienY + r * alienHeight,
+                width: alienWidth,
+                height: alienHeight,
+                alive: true
             }
             alienArray.push(alien)
         }
@@ -164,18 +186,17 @@ function createAliens() {
 }
 
 function shoot(e) {
-
     if (gameOver) {
         return;
     }
 
     if (e.code == "Space") {
         let bullet = {
-            x : ship.x + ship.width*12/33,
-            y : ship.y,
-            width : tileSize/8,
-            height : tileSize/2,
-            used : false
+            x: ship.x + ship.width * 12 / 33,
+            y: ship.y,
+            width: tileSize / 8,
+            height: tileSize / 2,
+            used: false
         }
         bulletArray.push(bullet);
     }

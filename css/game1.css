@@ -2,3 +2,36 @@
 #board {
     background-color: black;
 }
+
+#leftButton {
+    border: none;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    color: red;
+    margin: 0 50px;
+}
+#rightButton {
+    border: none;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    color: blue;
+    margin: 0 50px;
+}
+
+#canvas-container {
+    position: relative;
+}
+
+canvas {
+    display: block;
+}
+
+#buttons-container {
+    position: absolute;
+    bottom: 10px;
+    left: 12%;
+    transform: translateX(-50%);
+}
+

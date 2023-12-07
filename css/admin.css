@@ -1,7 +1,9 @@
 body {
     background-image: url("../IMG/background-_1__1.webp");    
     background-size: cover;
-    background-position: 90% 0;
+    background-position: 90% 0;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @media only screen and (max-width: 412px) and (max-height: 914px) {
