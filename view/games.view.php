@@ -6,21 +6,21 @@
     <title>Wachtrij games</title>
 
     <!-- Javascript -->
-    <script src="../js/gamestest.js" defer></script>
+    <!--<script src="../js/gamestest.js" defer></script>-->
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="../css/games.css">
 </head>
 <body>
     <main>
         <div class="button-wrapper">
-            <a href="view/game1.view.php" class="game-button">
+            <a href="view/game1.view.php" class="game-button" id="item-1">
                 <div><p>game 1</p></div>
             </a>
-            <a href="view/game2.view.php" class="game-button">
+            <a href="view/game2.view.php" class="game-button" id="item-2">
                 <div><p>game 2</p></div>
             </a>
-            <a href="view/game3.view.php" class="game-button">
+            <a href="view/game3.view.php" class="game-button" id="item-3">
                 <div><p>game 3</p></div>
             </a>
         </div>
