@@ -11,17 +11,24 @@
             background-image: url("../IMG/background-_1__1.webp");    
             background-size: cover;
             background-position: 90% 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
     </style>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     <link href="https://db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=Changeling+Neo+W01+Bold" rel="stylesheet">
 </head>
 
 <body>
-    <h2 id="naam">Challas</h2>
+    <h2 class="nameee" id="naam">Challas</h2>
     <p id="info">sluit 2023</p>
     <p id="info">goed af</p>
-    <div class="test"></div>
-    <button class="knoppie">DOE WAT</button>
+
+
+    <a href="view/game1.view.php" class="game-button" id="item-1">
+                <div><p>Kom wat doen</p></div>
+            </a>
+
+   
 </body>
 </html>
