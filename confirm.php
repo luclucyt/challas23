@@ -14,7 +14,6 @@
         exit;
     }
     
-    
     $link = $_GET['link'];
     $link = cleanData($link);
 

@@ -8,6 +8,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/bonnen.css">
+
+    <!-- Javascript -->
+    <script src="js/bonnen.js" defer></script>
 </head>
 
 <?php include 'header.php'; ?>
@@ -27,9 +30,9 @@
         </div>
 
         <div class="word-wrapper">
-            <form>
-                <input type="text" name="woord" placeholder="woord">
-                <input type="submit" value="Controleer">
+            <form method="POST" action="inc/word.php">
+                <input type="text" id="word-input" name="woord" placeholder="woord">
+                <input type="button" id="word-submit" value="Controleer">
             </form>
         </div>
     </div>

@@ -35,7 +35,6 @@ function login() : array {
         return [0, "Geen account gevonden, als je nog geen account hebt registreer dan eerst"];
     }
 
-
     $row = mysqli_fetch_assoc($result);
 
     if($row['isAllowed'] == 0) {
