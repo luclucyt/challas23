@@ -24,7 +24,7 @@ body {
     box-shadow:  16px 16px 32px #201f1f, -16px -16px 32px #4e4b4b;
 }
 
-.activiteiten-wrapper, .bonnen-wrapper{
+.activiteiten-wrapper, .bonnen-wrapper, .word-info{
     color: white;
     text-align: center;
 }

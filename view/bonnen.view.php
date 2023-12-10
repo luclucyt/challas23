@@ -11,6 +11,7 @@
 
     <!-- Javascript -->
     <script src="js/bonnen.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <?php include 'header.php'; ?>
@@ -28,6 +29,8 @@
         <div class="bonnen-wrapper">
             Je hebt <?= $_SESSION['bonnen'] ?> bonnen.
         </div>
+
+        <div class="word-info"></div>
 
         <div class="word-wrapper">
             <form method="POST" action="inc/word.php">

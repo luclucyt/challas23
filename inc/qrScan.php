@@ -56,6 +56,11 @@ function scanQR(): array{
     $row = mysqli_fetch_assoc($result);
 
     if($row['teller'] == 4){
+
+        if($row['bonnen'] == 4){
+            return [1, "Gebruiker heeft meer dan 4 bonnen al behaald!"];
+        }
+
         $sql = "UPDATE users SET teller = 0, bonnen = bonnen + 1 WHERE userID = '$code'";
         $result = mysqli_query($conn, $sql);
     }else{
