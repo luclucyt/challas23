@@ -21,11 +21,11 @@
 
 <body>
     <h2 class="nameee" id="naam">Challas</h2>
-    <p id="info">sluit 2023</p>
-    <p id="info">goed af</p>
+    <p id="info">sluit 2023</br>goed af</p>
+    
 
 
-    <a href="view/game1.view.php" class="game-button" id="item-1">
+    <a href="view/informatie.view.php" class="game-button" id="item-1">
                 <div><p>Kom wat doen</p></div>
             </a>
 
