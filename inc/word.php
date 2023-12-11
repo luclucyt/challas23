@@ -7,7 +7,17 @@ echo json_encode(woord());
 function woord() : array{ 
     global $conn;
 
-    $woordArray = ["test"];
+    $woordArray = [
+        "sneeuw", 
+        "oliebol",
+        "rendier", 
+        "kerstman",
+        "kerstbomen", 
+        "chocolademelk", 
+        "nieuwjaarsdag",
+
+        "test69420"
+    ];
 
 
     if(!isset($_POST['woord'])){
