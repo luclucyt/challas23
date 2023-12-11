@@ -10,6 +10,7 @@
     <!--font-family: 'century-gothic-bold', sans-serif -->
     <link href="https://www.dafontfree.net/embed/Y2VudHVyeS1nb3RoaWMtYm9sZCZkYXRhLzQ3L2MvNTA3NjIvZ290aGljYi50dGY" rel="stylesheet" type="text/css" />
 
+    <link rel="icon" type="image/x-icon" href="IMG/favicon.ico">
 
     <style>
         .navbar {
@@ -56,13 +57,16 @@
                     </li>
 
                     <?php if(!isset($_SESSION['userID'])): ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Login</a>
+                        </li>
                     <?php endif; ?>
+
+                    <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="admin.php">Admin</a>
                         </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
