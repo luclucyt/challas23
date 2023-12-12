@@ -78,7 +78,7 @@ function update() {
     requestAnimationFrame(update);
 
     if (gameOver) {
-        return;
+        location.reload()
     }
 
     context.clearRect(0, 0, boardWidth, boardHeight);
