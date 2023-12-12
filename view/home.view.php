@@ -5,30 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <style>
-        body {
-            height: 100vh;
-            /*background: linear-gradient(150deg, rgba(143, 81, 144, 1) 2%, rgba(167, 205, 72, 1) 29%, rgba(193, 65, 104, 1) 55%, rgba(188, 86, 55, 1) 61%, rgba(223, 199, 54, 1) 86%, rgba(81, 153, 191, 0.86) 100%);*/
-            background-image: url("../IMG/background-_1__1.webp");    
-            background-size: cover;
-            background-position: 90% 0;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+        
     </style>
     <link rel="stylesheet" href="css/home.css">
     <link href="https://db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=Changeling+Neo+W01+Bold" rel="stylesheet">
 </head>
 
 <body>
-    <h2 class="nameee" id="naam">Challas</h2>
-    <p id="info">sluit 2023</br>goed af</p>
-    
+    <div class="hero-img">
+        <img src="../IMG/glr-logo.jpg" alt="hero-img">
+    </div>
 
+    <div class="hero-text">
+        <h1>challas '23</h1>
+    </div>
 
-    <a href="view/informatie.view.php" class="game-button" id="item-1">
-                <div><p>Kom wat doen</p></div>
-            </a>
-
-   
+    <div class="main-text">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt tenetur consectetur praesentium recusandae. Aperiam numquam excepturi voluptatum expedita nostrum asperiores autem, mollitia quaerat unde rerum quasi soluta iste dolorum maxime maiores dolore nesciunt cumque reiciendis quod consequatur consequuntur exercitationem. Optio sapiente rem modi magni, debitis officia eveniet porro iure animi!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt tenetur consectetur praesentium recusandae. Aperiam numquam excepturi voluptatum expedita nostrum asperiores autem, mollitia quaerat unde rerum quasi soluta iste dolorum maxime maiores dolore nesciunt cumque reiciendis quod consequatur consequuntur exercitationem. Optio sapiente rem modi magni, debitis officia eveniet porro iure animi!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt tenetur consectetur praesentium recusandae. Aperiam numquam excepturi voluptatum expedita nostrum asperiores autem, mollitia quaerat unde rerum quasi soluta iste dolorum maxime maiores dolore nesciunt cumque reiciendis quod consequatur consequuntur exercitationem. Optio sapiente rem modi magni, debitis officia eveniet porro iure animi!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt tenetur consectetur praesentium recusandae. Aperiam numquam excepturi voluptatum expedita nostrum asperiores autem, mollitia quaerat unde rerum quasi soluta iste dolorum maxime maiores dolore nesciunt cumque reiciendis quod consequatur consequuntur exercitationem. Optio sapiente rem modi magni, debitis officia eveniet porro iure animi!</p>
+    </div>
 </body>
 </html>
