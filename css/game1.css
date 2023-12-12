@@ -7,16 +7,14 @@
     border: none;
     width: 75px;
     height: 75px;
-    background-color: transparent;
-    color: red;
+    background-image: url("../IMG/left.png");
     margin: 0 50px;
 }
 #rightButton {
     border: none;
     width: 75px;
     height: 75px;
-    background-color: transparent;
-    color: blue;
+    background-image: url("../IMG/right.png");
     margin: 0 50px;
 }
 
