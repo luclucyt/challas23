@@ -19,6 +19,14 @@
     color: blue;
     margin: 0 50px;
 }
+#shoot {
+    border: none;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    color: blue;
+    margin: 0 50px;
+}
 
 
 canvas {

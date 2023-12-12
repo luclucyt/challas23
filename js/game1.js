@@ -68,6 +68,10 @@ window.onload = function () {
     document.getElementById("rightButton").addEventListener("click", function () {
         moveShipRight();
     });
+
+    document.getElementById("shoot").addEventListener("click", function () {
+        shoot();
+    });
 }
 
 function update() {
