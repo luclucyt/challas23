@@ -20,9 +20,6 @@
             <a href="view/game2.view.php" class="game-button" id="item-2">
                 <div><p>game 2</p></div>
             </a>
-            <a href="view/game3.view.php" class="game-button" id="item-3">
-                <div><p>game 3</p></div>
-            </a>
         </div>
     </main>
 </body>

@@ -53,9 +53,12 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="home.php">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="bonnen.php">Bonnen</a>
-                    </li>
+
+                    <?php if(isset($_SESSION['userID'])): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bonnen.php">Bonnen</a>
+                        </li>
+                    <?php endif; ?>
                     <li class="nav-item">
                         <a class="nav-link" href="informatie.php">Informatie</a>
                     </li>

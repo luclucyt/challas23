@@ -24,13 +24,6 @@
     $row = mysqli_fetch_assoc($result);
     $userID = $row['userID'];
 
-    $sql = "SELECT * FROM `users` WHERE `userID` = '$userID'";
-    $result = mysqli_query($conn, $sql);
-
-    if(mysqli_num_rows($result) == 0) {
-        echo "Geen gebruiker gevonden";
-        exit;
-    }
 
     $sql = "UPDATE `users` SET `isAllowed` = 1 WHERE `userID` = '$userID'";
     $result = mysqli_query($conn, $sql);
@@ -41,11 +34,6 @@
     $sql = "SELECT * FROM `users` WHERE `userID` = '$userID'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-
-    if(mysqli_num_rows($result) == 0) {
-        echo "Er is iets fout gegaan";
-        exit;
-    }
 
     $_SESSION['isLoggedIn'] = true;
     $_SESSION['userID'] = $row['userID'];
