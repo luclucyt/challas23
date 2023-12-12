@@ -41,7 +41,7 @@
     $_SESSION['email'] = $row['email'];
     $_SESSION['isAdmin'] = $row['isAdmin'];
 
-    header("Location: home.php");
+    header("Location: login.php");
 
 ?>
 </body>
