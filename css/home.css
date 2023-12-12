@@ -32,3 +32,12 @@ body {
         margin-left: 5%;
     }
 }
+
+.masthead {
+    height: 30vh;
+    min-height: 400px;
+    background-image: url('../IMG/Untitled.png');
+    background-size: cover;
+    background-position: 45% 50%;
+    background-repeat: no-repeat;
+  }
