@@ -14,6 +14,10 @@
     <link href="https://www.dafontfree.net/embed/Y2VudHVyeS1nb3RoaWMtYm9sZCZkYXRhLzQ3L2MvNTA3NjIvZ290aGljYi50dGY"
         rel="stylesheet" type="text/css" />
 
+    <!--font-family: 'Changeling Neo W01 Inline'; -->
+    <link href="https://db.onlinewebfonts.com/c/48b9836f57927f785d91b01606917caa?family=Changeling+Neo+W01+Inline"
+        rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="IMG/favicon.ico">
 
     <style>
@@ -54,7 +58,7 @@
                         <a class="nav-link" aria-current="page" href="home.php">Home</a>
                     </li>
 
-                    <?php if(isset($_SESSION['userID'])): ?>
+                    <?php if (isset($_SESSION['userID'])): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="bonnen.php">Bonnen</a>
                         </li>

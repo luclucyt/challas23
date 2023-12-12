@@ -15,7 +15,7 @@ body {
 .hero-text{
     text-align: center;
     color: #A7CD48;
-    font-family: "Changeling Neo W01 Bold";
+    font-family: "Changeling Neo W01 Inline";
 }
 
 .main-text{
@@ -41,3 +41,23 @@ body {
     background-position: 45% 50%;
     background-repeat: no-repeat;
   }
+
+  .timer {
+    justify-content: center; /* For flex containers */
+    text-align: center; /* For non-flex containers */
+    display: flex; /* For flex containers */
+    align-items: center; /* For flex containers */
+    font-family: 'Changeling Neo W01 Bold';
+    color: #A7CD48;
+    background: rgba(4, 4, 4, 0.36);
+    border-radius: 10px;
+    padding: 30px;
+    width: 40%;
+    margin: 0 auto; /* Horizontal centering using margin */
+}
+
+@media only screen and (max-width: 890px){
+    .timer {
+        width: 90%;
+    }
+}
