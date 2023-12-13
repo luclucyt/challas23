@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/resetPassword.css">
 </head>
 <body>
+
+
     <?php include '../header.php'; ?>
     <?php include '_database.php'; ?>
     <?php include 'mail.php'; ?>
+<div class="container">
 
+    <img src="../IMG/vormpje1.png" class="vormpje1 position-absolute" alt="">
+    <img src="../IMG/vormpje4.png" class="vormpje4 position-absolute" alt="">
+    <img src="../IMG/vormpje5.png" class="vormpje5 position-absolute" alt="">
+    <img src="../IMG/vormpje6.png" class="vormpje6 position-absolute" alt="">
     <?php
     if(!isset($_POST['email']) && !isset($_GET['link'])){?>
-        <form method='post' action=''>
-            <input type='email' name='email' placeholder='012345@glr.nl' required><br>
-            <button type='submit'>Verstuur</button>
+
+    
+        <form id="knoppen" method='post' action=''>
+            <input id="input" type='email' name='email' placeholder='012345@glr.nl' required><br>
+            <button id="button" type='submit'>Verstuur</button>
     
         <?php
         die();
     }
+
+    
 
     
     if(isset($_POST['email'])){
@@ -108,5 +120,7 @@
         <input type='password' name='new-password' placeholder='Nieuw wachtwoord' required><br>
         <button type='submit'>Wachtwoord veranderen</button>
     </form>
+
+    </div>
 </body>
 </html>

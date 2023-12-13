@@ -189,21 +189,20 @@ function createAliens() {
     alienCount = alienArray.length;
 }
 
-function shoot(e) {
+function shoot() {
     if (gameOver) {
         return;
     }
 
-    if (e.code == "Space") {
-        let bullet = {
-            x: ship.x + ship.width * 12 / 33,
-            y: ship.y,
-            width: tileSize / 8,
-            height: tileSize / 2,
-            used: false
-        }
-        bulletArray.push(bullet);
-    }
+    let bullet = {
+        x: ship.x + ship.width * 12 / 33,
+        y: ship.y,
+        width: tileSize / 8,
+        height: tileSize / 2,
+        used: false
+    };
+
+    bulletArray.push(bullet);
 }
 
 function detectCollision(a, b) {

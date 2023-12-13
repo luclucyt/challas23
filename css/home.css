@@ -40,7 +40,15 @@ body {
     background-size: cover;
     background-position: 45% 50%;
     background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 412px) and (max-height: 914px) {
+  .game-button{
+    margin-left:15%;
+    width:70%;
+
   }
+}
 
   .timer {
     justify-content: center; /* For flex containers */
