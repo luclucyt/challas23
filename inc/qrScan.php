@@ -18,8 +18,6 @@ function scanQR(): array{
         return [0, "Selecteer een admin type voor je begint met scannen"];
     }
 
-
-
     $code = $_POST['code'];
     $code = cleanData($code);
     $adminType = $_POST['adminType'];
@@ -39,25 +37,61 @@ function scanQR(): array{
         $result = mysqli_query($conn, $sql);
 
         $row = mysqli_fetch_assoc($result);
-        if($row['gebruikteBonnen'] == 4){
-            return [0, "Gebruiker heeft al 4 bonnen gebruikt"];
+        if($row['etenBonnen'] == 0 && $row['bonnen'] == 0){
+            return [1, "Gebruiker heeft geen etens bonnen meer"];
         }
 
-        if($row['bonnen'] <= $row['gebruikteBonnen']){
-            return [0, "Gebruiker heeft geen bonnen meer"];
+        if($row['etenBonnen'] > 0){
+            $sql = "UPDATE users SET etenbonnen = 0 WHERE userID = '$code'";
+            $result = mysqli_query($conn, $sql);
+            return [1, "Gebruiker heeft 1 etens bon gebruikt"];
         }
+
+        $sql = "UPDATE users SET bonnen = bonnen - 1 WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
 
         $sql = "UPDATE users set gebruikteBonnen = gebruikteBonnen + 1 WHERE userID = '$code'";
         $result = mysqli_query($conn, $sql);
 
-        return [1, "Gebruiker heeft 1 bon gebruikt"];
+        return [1, "Gebruiker heeft 1 etens bon gebruikt"];
     }
 
+    if($adminType == "drinken"){
+        $sql = "SELECT * FROM users WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
+
+        $row = mysqli_fetch_assoc($result);
+        if($row['drinkenBonnen'] == 0 && $row['bonnen'] == 0){
+            return [1, "Gebruiker heeft geen drinken bonnen meer"];
+        }
+
+        if($row['drinkenBonnen'] > 0){
+            $sql = "UPDATE users SET drinkenbonnen = 0 WHERE userID = '$code'";
+            $result = mysqli_query($conn, $sql);
+            return [1, "Gebruiker heeft 1 drinken bon gebruikt"];
+        }
+
+        $sql = "UPDATE users SET bonnen = bonnen - 1 WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
+
+        $sql = "UPDATE users set gebruikteBonnen = gebruikteBonnen + 1 WHERE userID = '$code'";
+        $result = mysqli_query($conn, $sql);
+
+        return [1, "Gebruiker heeft 1 drinken bon gebruikt"];
+    }
+
+
+    $sql = "SELECT * FROM users WHERE userID = '$code'";
+    $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
     if($row['teller'] == 4){
 
         if($row['bonnen'] == 4){
+            return [1, "Gebruiker heeft meer dan 4 bonnen al behaald!"];
+        }
+
+        if($row['bonnen'] + $row['gebruikteBonnen'] >= 4){
             return [1, "Gebruiker heeft meer dan 4 bonnen al behaald!"];
         }
 

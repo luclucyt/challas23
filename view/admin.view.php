@@ -19,6 +19,7 @@
 
     <select class="admin-type">
         <option value="eten">eten</option>
+        <option value="drinken">drinken</option>
         <option value="activiteit">activiteit</option>
     </select>
 </body>

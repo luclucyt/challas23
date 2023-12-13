@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,47 +8,92 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/informatie.css">
-    
+
     <!-- favIcon -->
     <link rel="favicon" href="IMG/Challas2023_logo_FINAL.png">
 </head>
+
 <body>
 
     <div class="card-wrapper">
-        <div class="img-wrapper">
-            <img src="IMG/space.jpg">
-        </div>
-
         <div class="text-wrapper">
-            <h1>Space</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatum, voluptatibus. Accusantium, adipisci, alias, amet, asperiores atque autem blanditiis consequatur cumque cupiditate delectus doloremque doloribus ea earum eligendi eos error esse est eum eveniet excepturi exercitationem facilis fugiat fugit harum hic illum impedit in incidunt ipsa ipsum iure iusto labore laboriosam laborum libero magnam magni maiores maxime molestiae molestias mollitia natus nemo neque nihil nisi nobis nostrum nulla numquam obcaecati officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quaerat quam quasi quia quibusdam quidem quisquam quod quos ratione recusandae rem repellat repellendus reprehenderit repudiandae rerum saepe sapiente sequi similique sint sit soluta sunt suscipit tempora temporibus tenetur totam ullam unde ut vel veniam veritatis voluptas voluptate voluptatem voluptates voluptatibus voluptatum. Ab, accusantium adipisci alias aliquam aliquid amet animi architecto asperiores aspernatur assumenda atque aut autem beatae blanditiis commodi consequatur corporis culpa cum cupiditate delectus deleniti deserunt dicta dignissimos distinctio dolor dolorem doloremque doloribus dolorum ducimus ea eius eligendi eos error esse est et eum eveniet excepturi exercitationem expedita explicabo facere facilis fugiat fugit harum hic id illum impedit in incidunt ipsa ipsum iste itaque iure iusto labore laboriosam laborum laudantium libero magnam magni maiores maxime molestiae molestias mollitia nam natus necessitatibus nemo neque nihil nisi nobis non nostrum nulla numquam obcaecati officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quaerat quam quasi quia quibusdam quidem quisquam quod quos ratione recusandae rem</p>
-            <p class="locatie">Kelder</p>
+            <h1>Rollerdisco</h1>
+            <p>Trek je skates aan en rol over de rollerdisco, waar vrolijke muziek van nu en natuurlijk uit de 80’s niet te missen is. Elke beweging is een feest, dus kom en skate met ons mee!</p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>Techno bunker</h1>
+            <p>Vind jij alle muziek nou saai? Kom dan naar onze techno bunker en beuk iedereen eruit! </p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>Escaperoom</h1>
+            <p>Daag jezelf uit in onze escaperoom, waar er van alles op je staat te wachten. Werk samen met je team en ontsnap aan de spanning van deze uitdaging! </p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>Foodstands</h1>
+            <p>Heb jij ook trek in een lekkere oliebol of heb je misschien zin in popcorn… doe dan mee aan onze leuke activiteiten en krijg allemaal gratis eten! </p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>Cosplaycatwalk</h1>
+            <p>Ben jij een grote cosplay fan en heb je altijd al een eigen fotoshoot in kostuum gewild? Loop dan mee op de catwalk en win een persoonlijke fotoshoot! </p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>Kermis</h1>
+            <p>Laat het kleine kind in je weer naar boven komen. Kom naar de kermis waar de attracties en spelletjes voor lachende gezichten zorgen. Dit blijft een feest voor iedereen! </p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>RC-race</h1>
+            <p>Voel de adrenaline tijdens de RC-race, waar snelheid en spanning samenkomen op het parcours. </p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>E-sport</h1>
+            <p>Race 1 VS 1 tegen Dani Hagebeuk en ervaar de opwinding van deze spannende competitie! Of win een potje FIFA tegen je vrienden! </p>
+            <!--<p class="locatie">Kelder</p>-->
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <div class="text-wrapper">
+            <h1>Lasergamen</h1>
+            <p>Word jij nou ook zo gek van al je klasgenoten, daag ze dan uit met een potje laser gamen en maak ze allemaal af</p>
+            <!--<p class="locatie">Kelder</p>-->
         </div>
     </div>
     
     <div class="card-wrapper">
-        <div class="img-wrapper">
-            <img src="IMG/space.jpg">
-        </div>
-
         <div class="text-wrapper">
-            <h1>Space</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatum, voluptatibus. Accusantium, adipisci, alias, amet, asperiores atque autem blanditiis consequatur cumque cupiditate delectus doloremque doloribus ea earum eligendi eos error esse est eum eveniet excepturi exercitationem facilis fugiat fugit harum hic illum impedit in incidunt ipsa ipsum iure iusto labore laboriosam laborum libero magnam magni maiores maxime molestiae molestias mollitia natus nemo neque nihil nisi nobis nostrum nulla numquam obcaecati officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quaerat quam quasi quia quibusdam quidem quisquam quod quos ratione recusandae rem repellat repellendus reprehenderit repudiandae rerum saepe sapiente sequi similique sint sit soluta sunt suscipit tempora temporibus tenetur totam ullam unde ut vel veniam veritatis voluptas voluptate voluptatem voluptates voluptatibus voluptatum. Ab, accusantium adipisci alias aliquam aliquid amet animi architecto asperiores aspernatur assumenda atque aut autem beatae blanditiis commodi consequatur corporis culpa cum cupiditate delectus deleniti deserunt dicta dignissimos distinctio dolor dolorem doloremque doloribus dolorum ducimus ea eius eligendi eos error esse est et eum eveniet excepturi exercitationem expedita explicabo facere facilis fugiat fugit harum hic id illum impedit in incidunt ipsa ipsum iste itaque iure iusto labore laboriosam laborum laudantium libero magnam magni maiores maxime molestiae molestias mollitia nam natus necessitatibus nemo neque nihil nisi nobis non nostrum nulla numquam obcaecati officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quaerat quam quasi quia quibusdam quidem quisquam quod quos ratione recusandae rem</p>
-            <p class="locatie">Kelder</p>
-        </div>
-    </div> 
-    
-    <div class="card-wrapper">
-        <div class="img-wrapper">
-            <img src="IMG/space.jpg">
-        </div>
-
-        <div class="text-wrapper">
-            <h1>Space</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatum, voluptatibus. Accusantium, adipisci, alias, amet, asperiores atque autem blanditiis consequatur cumque cupiditate delectus doloremque doloribus ea earum eligendi eos error esse est eum eveniet excepturi exercitationem facilis fugiat fugit harum hic illum impedit in incidunt ipsa ipsum iure iusto labore laboriosam laborum libero magnam magni maiores maxime molestiae molestias mollitia natus nemo neque nihil nisi nobis nostrum nulla numquam obcaecati officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quaerat quam quasi quia quibusdam quidem quisquam quod quos ratione recusandae rem repellat repellendus reprehenderit repudiandae rerum saepe sapiente sequi similique sint sit soluta sunt suscipit tempora temporibus tenetur totam ullam unde ut vel veniam veritatis voluptas voluptate voluptatem voluptates voluptatibus voluptatum. Ab, accusantium adipisci alias aliquam aliquid amet animi architecto asperiores aspernatur assumenda atque aut autem beatae blanditiis commodi consequatur corporis culpa cum cupiditate delectus deleniti deserunt dicta dignissimos distinctio dolor dolorem doloremque doloribus dolorum ducimus ea eius eligendi eos error esse est et eum eveniet excepturi exercitationem expedita explicabo facere facilis fugiat fugit harum hic id illum impedit in incidunt ipsa ipsum iste itaque iure iusto labore laboriosam laborum laudantium libero magnam magni maiores maxime molestiae molestias mollitia nam natus necessitatibus nemo neque nihil nisi nobis non nostrum nulla numquam obcaecati officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quaerat quam quasi quia quibusdam quidem quisquam quod quos ratione recusandae rem</p>
-            <p class="locatie">Kelder</p>
+            <h1>Photobooth</h1>
+            <p>Wil je een leuke tastbare herinnering van dit evenement, kom dan naar de photobooth, waar lachen gekke gezichten trekken centraal staan.</p>
+            <!--<p class="locatie">Kelder</p>-->
         </div>
     </div>
-
 </body>
+
 </html>

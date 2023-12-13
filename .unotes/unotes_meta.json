@@ -1,0 +1,52 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "css": {
+      "name": "css",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "data": {
+      "name": "data",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "IMG": {
+      "name": "IMG",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "inc": {
+      "name": "inc",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "js": {
+      "name": "js",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "vendor": {
+      "name": "vendor",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "view": {
+      "name": "view",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "TODO": 0,
+    "README": 1
+  }
+}

@@ -9,31 +9,18 @@ body {
 
 .card-wrapper{
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     background-color: #212529;
     width: 90%;
-    height: 30%;
+    height: 25%;
     margin: 1.5% 5%;
     border-radius: 10px;
-}
-
-.img-wrapper{
-    height: 90%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-}
-
-.img-wrapper > img{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
 }
 
 .text-wrapper{
     height: 90%;
     width: 80%;
+    margin-left: 10%;
 }
 
 .text-wrapper > h1{
@@ -62,25 +49,18 @@ body {
 @media screen and (max-width: 768px) {
     .card-wrapper{
         margin-top: 5%;
-        height: 80%;
+        height: fit-content;
+        height: 40%;
         flex-direction: column;
-    }
-
-    .img-wrapper{
-        height: 20%;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-    }
-
-    .img-wrapper > img{
-        object-fit: cover;
-        border-radius: 100%;
+        justify-content: center;
     }
 
     .text-wrapper{
         height: 70%;
         width: 80%;
         text-align: center;
+
+        margin: 0;
     }
 
     .text-wrapper p{
