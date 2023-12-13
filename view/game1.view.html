@@ -16,7 +16,7 @@
 
         <div id="buttons-container">
             <button id="leftButton">Left</button>
-            <button id="shoot">shoot</button>
+            <button id="shoot">Shoot</button>
             <button id="rightButton">Right</button>
 
         </div>
