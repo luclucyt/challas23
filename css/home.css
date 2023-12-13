@@ -7,6 +7,7 @@ body {
     background-position: 90% 0;
 }
 
+<<<<<<< Updated upstream
 .hero-img img{
     width: 100vw;
     height: 98vh;
@@ -40,6 +41,13 @@ body {
     background-size: cover;
     background-position: 45% 50%;
     background-repeat: no-repeat;
+=======
+
+@media only screen and (max-width: 412px) and (max-height: 914px) {
+  .game-button{
+    margin-left:15%;
+    width:70%;
+>>>>>>> Stashed changes
   }
 
   .timer {
