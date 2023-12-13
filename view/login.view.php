@@ -23,10 +23,10 @@ include("header.php");
             <div class="row justify-content-center">
                 <div class="col-10 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-dark h-100" style="border-radius: 1rem;">
-                    <img src="../IMG/vormpje1.png" class="vormpje1 position-absolute" alt="">
-                    <img src="../IMG/vormpje4.png" class="vormpje4 position-absolute" alt="">
-                    <img src="../IMG/vormpje5.png" class="vormpje5 position-absolute" alt="">
-                    <img src="../IMG/vormpje6.png" class="vormpje6 position-absolute" alt="">
+                    <img src="../IMG/vormpje1.png" class="vormpje1" alt="">
+                    <img src="../IMG/vormpje4.png" class="vormpje4" alt="">
+                    <img src="../IMG/vormpje5.png" class="vormpje5" alt="">
+                    <img src="../IMG/vormpje6.png" class="vormpje6" alt="">
 
                         <div class="card-body p-5 text-center d-flex flex-column justify-content-between h-100">
                             <div class="mb-md-5 mt-md-4 pb-2 login-wrapper">
