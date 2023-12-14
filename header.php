@@ -55,30 +55,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="home.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="https://challas.stu.sd-lab.nl/home.php">Home</a>
                     </li>
 
                     <?php if (isset($_SESSION['userID'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="bonnen.php">Bonnen</a>
+                            <a class="nav-link" href="https://challas.stu.sd-lab.nl/bonnen.php">Bonnen</a>
                         </li>
                     <?php endif; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="informatie.php">Informatie</a>
+                        <a class="nav-link" href="https://challas.stu.sd-lab.nl/informatie.php">Informatie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="games.php">Wachtrij games</a>
+                        <a class="nav-link" href="https://challas.stu.sd-lab.nl/games.php">Wachtrij games</a>
                     </li>
 
                     <?php if (!isset($_SESSION['userID'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
+                            <a class="nav-link" href="https://challas.stu.sd-lab.nl/login.php">Login</a>
                         </li>
                     <?php endif; ?>
 
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="admin.php">Admin</a>
+                            <a class="nav-link" href="https://challas.stu.sd-lab.nl/admin.php">Admin</a>
                         </li>
                     <?php endif; ?>
                 </ul>
