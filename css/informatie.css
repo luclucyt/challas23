@@ -1,11 +1,19 @@
 body {
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
     height: 100vh;
     background-image: url("../IMG/background-_1__1.webp");    
     background-size: cover;
-    background-position: 90% 0;
+    background-position: 100% 10%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    background-color: #373535;
+
+    /* shift the image down */
+    /* background-position: 0 100px; */
 }
+
 
 .card-wrapper{
     display: flex;
@@ -26,7 +34,8 @@ body {
 .text-wrapper > h1{
     font-size: 2rem;
     font-weight: 700;
-    color: white;
+    font-family: 'century-gothic-bold', sans-serif;
+    color: #A7CD48;;
 }
 
 .text-wrapper > p{
@@ -39,6 +48,9 @@ body {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+
+    color: #A7CD48;
+    font-family: 'century-gothic-bold', sans-serif;
 }
 
 .locatie{

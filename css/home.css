@@ -1,7 +1,7 @@
 body {
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100vh;
+    height: 110vh;
     background-image: url("../IMG/background-_1__1.webp");
     background-size: cover;
     background-position: 90% 0;
@@ -24,6 +24,11 @@ body {
 
     font-family: 'century-gothic-bold', sans-serif;
     color: #A7CD48;
+
+    background-color: #212529;
+    padding: 1% 5%;
+    border-radius: 10px;
+
 }
 
 @media screen and (max-width: 600px) {
@@ -57,7 +62,7 @@ body {
     align-items: center; /* For flex containers */
     font-family: 'Changeling Neo W01 Bold';
     color: #A7CD48;
-    background: rgba(4, 4, 4, 0.36);
+    background: #212529;
     border-radius: 10px;
     padding: 30px;
     width: 40%;
